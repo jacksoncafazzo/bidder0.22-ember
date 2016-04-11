@@ -1,4 +1,9 @@
+{{g-maps name="bid-map" click='bid' lat=lat lng=lng zoom=zoom}}
+map should be above me
+{{#if showMap}}
 {{md-input value=lat}}
 {{md-input value=lng}}
 {{md-input value=zoom}}
-{{g-maps name="bidmap" click='bid' lat=lat lng=lng zoom=zoom}}
+{{else}}
+{{md-btn action='showMap' text="show map"}}
+{{/if}}
