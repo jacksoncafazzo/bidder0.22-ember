@@ -1,0 +1,11 @@
+<div class='page-header'>
+    <h1>Welcome, you are authenticated!</h1>
+</div>
+<div class='panel panel-default'>
+    <div class='panel-heading'>{{session.currentUser.email}}</div>
+    <div class='panel-body'>
+        <img src='{{session.currentUser.profileImageURL}}' />
+    </div>
+</div>
+<h3>Let's make you a Bidder Profile!</h3>
+  {{log session.currentUser}}

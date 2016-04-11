@@ -6,6 +6,19 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    firebase: 'https://bidder2.firebaseio.com/',
+    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
+    torii: {
+      sessionServiceName: 'session',
+      providers: {
+        'facebook-oauth2': {
+          apiKey      : '1268010953226646',
+          xfbml      : true,
+          version    : 'v2.5',
+          scope      : 'email'
+        }
+      }
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
