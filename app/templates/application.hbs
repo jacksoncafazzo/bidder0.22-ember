@@ -1,8 +1,4 @@
-{{#if session.isAuthenticated}}
-  {{#link-to 'myprofile'}}My Profile{{/link-to}}
-  <button {{action 'signOut'}}>Sign Out</button>
-{{else}}
-  <a href='sign-in'>Sign In</a>
-{{/if}}
-<br>
-{{outlet}}
+<div class="container">
+  {{partial 'navbar'}}
+  {{outlet}}
+</div>

@@ -11,6 +11,7 @@ export default Ember.Controller.extend({
       }, (error, data) => {
         if (error) {
           console.log(error);
+          console.log(data);
         } else {
           controller.set('email', null);
           controller.set('password', null);
