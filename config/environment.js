@@ -26,8 +26,8 @@ module.exports = function(environment) {
         }
       }
     },
-    'ember-cli-map': {
-      googleApiKey: 'AIzaSyDPe_5UuDK4YnbIdaGodRrYaL7LkG9aS74'
+    googleMap: {
+      apiKey: 'AIzaSyDPe_5UuDK4YnbIdaGodRrYaL7LkG9aS74'
     },
     EmberENV: {
       FEATURES: {

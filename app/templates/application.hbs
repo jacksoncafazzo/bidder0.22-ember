@@ -1,16 +1,4 @@
 <div class="container">
   {{partial 'navbar'}}
-  {{google-map lat=14.7646531
-               lng=102.8115874
-               zoom=17
-               gopt_zoomControl=false
-               type='satellite'}}
-
-  <div class="controls">
-   <label>
-     Zoom:
-     {{input type="range" value=zoom min=0 max=18 step=1}}
-   </label>
-  </div>
   {{outlet}}
 </div>
