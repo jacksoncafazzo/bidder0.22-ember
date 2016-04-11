@@ -7,7 +7,14 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     firebase: 'https://bidder2.firebaseio.com/',
-    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
+    contentSecurityPolicy: {
+      'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com maps.gstatic.com" ,
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-eval' *.googleapis.com maps.gstatic.com",
+      'font-src': "'self' fonts.gstatic.com",
+      'img-src': "'self' *.googleapis.com maps.gstatic.com csi.gstatic.com",
+      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maps.gstatic.com"
+    },
     torii: {
       sessionServiceName: 'session',
       providers: {
@@ -18,6 +25,9 @@ module.exports = function(environment) {
           scope      : 'email'
         }
       }
+    },
+    'ember-cli-map': {
+      googleApiKey: 'AIzaSyDPe_5UuDK4YnbIdaGodRrYaL7LkG9aS74'
     },
     EmberENV: {
       FEATURES: {

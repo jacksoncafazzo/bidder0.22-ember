@@ -1,5 +1,7 @@
 
 
-  <a href="sign-up">
-    Create a new account
-  </a>
+{{#if session.isAuthenticated}}
+  {{new-profile save2='save3'}}
+{{else}}
+  sign in
+{{/if}}
