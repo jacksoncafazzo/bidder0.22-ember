@@ -3,13 +3,13 @@
     <hr>
     <h6>Title: {{bid.title}}</h6>
     <h6>Bid Value: ${{bid.payment}}</h6>
-    <h6>Location: {{bid.location}}</h6>
+    <h6>Posted: {{moment-format bid.date}}</h6>
   </div>
 {{else}}
   <div class="inactive">
     <hr>
     <h6>Title: {{bid.title}}</h6>
     <h6>Bid Value: ${{bid.payment}}</h6>
-    <h6>Location: {{bid.location}}</h6>
+    <h6>Posted: {{moment-format bid.date}}</h6>
   </div>
 {{/if}}

@@ -1,10 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  // showProfile: false,
-  // actions: {
-  //   showProfile() {
-  //     this.toggleProperty('showProfile');
-  //   }
-  // }
+
+  sortBy: ['date:desc'],
+  sortedBids: Ember.computed.sort('bidder.bids', 'sortBy'),
+
 });
