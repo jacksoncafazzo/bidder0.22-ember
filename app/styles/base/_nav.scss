@@ -1,0 +1,23 @@
+.nav-wrapper {
+  background-color: $nav-bg-color;
+  .brand-logo {
+    color: $primary-color;
+    font-family: $nav-font;
+  }
+  .ember-view {
+    color: $primary-color;
+    font-family: $nav-font;
+  }
+  .topLink {
+   border-radius: 5px;
+  }
+  .topLink:hover {
+    a {
+      background-color: $primary-color;
+      color: white;
+      border-radius: 5px;
+
+    }
+  }
+
+}

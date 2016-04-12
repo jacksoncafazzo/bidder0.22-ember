@@ -1,5 +1,6 @@
 {{#if session.isAuthenticated}}
   Welcome, <div id="email"> {{session.currentUser.email}}</div>
+  {{log session.uid}}
 {{new-profile saveProfile='saveProfile'}}
   {{bid-map }}
 {{else}}

@@ -1,6 +1,15 @@
 @import 'materialize';
 @import 'ember-cli-materialize';
+@import "base/variables";
+@import "base/nav";
+@import "base/buttons";
+
+
 
 .ember-cli-g-map {
   height: 400px;
+}
+
+h4  {
+  color: $primary-color;
 }
