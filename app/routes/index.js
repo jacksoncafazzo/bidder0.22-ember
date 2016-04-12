@@ -6,7 +6,6 @@ export default Ember.Route.extend({
       params['email'] = this.get('session.currentUser.email');
       var newProfile = this.store.createRecord('bidder', params);
       newProfile.save();
-      this.set('currentUser', newProfile.id);
       this.transitionTo('bidder', newProfile);
     }
   }
