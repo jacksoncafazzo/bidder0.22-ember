@@ -3,8 +3,26 @@
 @import "base/variables";
 @import "base/nav";
 @import "base/buttons";
+@import "base/header";
 
 
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-item img {
+  width: 100%;
+  
+}
 
 .ember-cli-g-map {
   height: 400px;
@@ -12,4 +30,8 @@
 
 h4  {
   color: $primary-color;
+}
+
+.inactive {
+  color: red;
 }
