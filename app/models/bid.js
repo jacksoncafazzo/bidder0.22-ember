@@ -4,6 +4,7 @@ export default DS.Model.extend({
   date: DS.attr('date', {defaultValue() {return new Date(); } }),
   category: DS.attr(),
   title: DS.attr(),
+  location: DS.attr(),
   payment: DS.attr('number'),
   providing: DS.attr('boolean'),
   description: DS.attr(),

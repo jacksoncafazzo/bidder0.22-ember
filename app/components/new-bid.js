@@ -14,6 +14,7 @@ export default Ember.Component.extend({
       var params = {
         category: this.get('category'),
         title: this.get('title'),
+        location: this.get('location'),
         payment: this.get('payment'),
         providing: this.get('providing'),
         description: this.get('description'),
