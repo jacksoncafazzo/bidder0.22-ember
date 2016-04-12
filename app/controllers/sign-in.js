@@ -10,12 +10,13 @@ export default Ember.Controller.extend({
         email: this.get('email') || '',
         password: this.get('password') || '',
       }).then(() => {
-        controller.set('email', null);
+        // controller.set('email', null);
         controller.set('password', null);
-        controller.transitionToRoute('myprofile');
+        // controller.transitionToRoute('index');
       }, (error) => {
         console.log(error);
       });
     }
+
   }
 });

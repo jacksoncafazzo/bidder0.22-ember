@@ -1,6 +1,7 @@
 {{#if session.isAuthenticated}}
-  {{new-profile save2='save3'}}
+  Welcome, <div id="email"> {{session.currentUser.email}}</div>
   {{bid-map }}
 {{else}}
-  sign in
+  <h4>Welcome to Bidder!</h4>
+  New user? <a href='sign-up' class='btn'>Sign Up</a>
 {{/if}}
