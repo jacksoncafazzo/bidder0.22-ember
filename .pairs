@@ -1,6 +1,10 @@
 pairs:
   jc: Jackson Cafazzo
   lr: Lindsey Raffa
-email:
+  jm: Jordan Meier
+  ds: Daren Schaad
+email_addresses:
   jc: doctorjuno@gmail.com
   lr: lindsey.raffa@gmail.com
+  jm: jbirdmeier@gmail.com
+  ds: darenschaad@gmail.com
