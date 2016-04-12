@@ -6,6 +6,6 @@
     <h5>Email: {{bidder.email}}</h5>
     <h4>{{bidder.firstName}}'s Bid History</h4>
     {{#each bidder.bids as |bid|}}
-      {{bid-tile bid=bid}}
+      {{#link-to 'bid' bid.id}}{{bid-tile bid=bid}}{{/link-to}}
     {{/each}}
   </div>
