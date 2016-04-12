@@ -1,14 +1,16 @@
-{{#md-navbar name='Example' class='blue lighten-3'}}
+{{#md-navbar name='BIDDER'}}
   <!-- A workaround to get the "active" class
     to apply to the active <li> automatically -->
-  {{#link-to 'index' tagName='li'}}
-    {{link-to 'Bidder' 'index'}}
+  {{#link-to 'index' tagName='li' class='topLink'}}
+
   {{/link-to}}
   {{#if session.isAuthenticated}}
   {{#link-to 'bidder'}}My Profile{{/link-to}}
   {{md-btn action='signOut' text='sign out'}}
   {{else}}
-  <a href='sign-up' class='btn'>Sign Up</a>
-  <a href='sign-in' class='btn'>Sign In</a>
+  {{#link-to 'sign-up' class="sign-up"}}Sign-Up{{/link-to}}
+    {{#link-to 'sign-in' class="sign-in"}}Sign-in{{/link-to}}
+  <!-- <a href='sign-up' class='btn'>Sign Up</a>
+  <a href='sign-in' class='btn'>Sign In</a> -->
   {{/if}}
 {{/md-navbar}}
