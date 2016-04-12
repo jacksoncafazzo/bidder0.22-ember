@@ -2,7 +2,8 @@
   <div class='page-header'>
     <h2>{{bidder.firstName}} {{bidder.lastName}}'s Profile</h2>
     <br>
-    <h5>phone: {{bidder.phone}}</h5>
+    <h5>Phone: {{bidder.phone}}</h5>
+    <h5>Email: {{bidder.email}}</h5>
     <h4>{{bidder.firstName}}'s Bid History</h4>
     {{#each bidder.bids as |bid|}}
       {{bid-tile bid=bid}}
