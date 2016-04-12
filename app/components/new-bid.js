@@ -7,7 +7,9 @@ export default Ember.Component.extend({
       this.set('categoryShow', true);
     },
     postBid() {
+      debugger;
       var params = {
+        category: this.get('category'),
         title: this.get('title'),
         payment: this.get('payment'),
         description: this.get('description'),
