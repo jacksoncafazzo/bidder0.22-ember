@@ -5,9 +5,17 @@
   <h6>Description: {{bid.description}}</h6>
   <h6>Start Date: {{bid.jobStart}}</h6>
   <h6>End Date: {{bid.jobEnd}}</h6>
+  <h6>Active: {{bid.active}}</h6>
   {{#if bid.providing}}
     <h6>I am providing this service</h6>
   {{else}}
       <h6>I am seeking this service</h6>
+  {{/if}}
+  {{#if bid.active}}
+  <!-- {{md-btn action='deactivateBid' bid=bid text='Deactivate Bid'}} -->
+  <button {{action 'deactivateBid' bid}}>deactivate</button>
+  {{else}}
+  <!-- {{md-btn action='activateBid' text='Activate Bid'}} -->
+  <button {{action 'activateBid' bid}}>Activate</button>
   {{/if}}
 </div>
