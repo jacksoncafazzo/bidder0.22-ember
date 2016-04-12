@@ -11,6 +11,7 @@
   {{else}}
       <h6>I am seeking this service</h6>
   {{/if}}
+  <h6>Bid Posted: {{moment-from-now bid.date}}</h6>
   {{#if bid.active}}
   <a {{action 'deactivateBid' bid}} class="btn">deactivate</a>
   {{else}}
