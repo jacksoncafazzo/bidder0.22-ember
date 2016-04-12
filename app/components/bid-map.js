@@ -56,13 +56,18 @@ export default Ember.Component.extend({
       this.set('showMap', true);
     },
     bid(event) {
-      var gmap = this.get('gmap');
-      var map = gmap.maps.select('bidmap');
-      console.log(map);
+      // make the infowindow with bid info-- we made it already. user chooses what bid to add to the infowindow?
       var marker = {
         lat: event.latLng.lat(),
         lng: event.latLng.lng(),
         label: "Bid of Marvels",
+        clickable: true,
+        crossOnDrag: true,
+        cursor: 'pointer',
+        draggable: true,
+        optimized: true,
+        visible: true,
+        zIndex: 999,
         click: function(event, marker) {},
         rightclick: function(event, marker) {},
         dblclick: function(event, marker) {},
@@ -73,10 +78,13 @@ export default Ember.Component.extend({
         drag: function(event, marker) {},
         dragstart: function(event, marker) {},
         dragend: function(event, marker) {},
-        clickable: true,
-        crossOnDrag: true,
-        cursor: 'pointer',
-        draggable: true
+        //get google api in here for these
+        // anchorPoint: new google.maps.Point(),
+        // animation: google.maps.Animation.DROP,
+        // attribution: new google.maps.Attribution(),
+        // place: new google.maps.MarkerPlace(),
+        // position: new google.maps.LatLng(),
+        // shape: new google.maps.MarkerShape(),
       };
       console.log("haaay", marker);
       this.markers.addObject(marker);
