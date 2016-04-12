@@ -1,12 +1,16 @@
 
 {{bidder-profile bidder=model}}
 
-
-<div class='panel panel-default'>
-    <div class='panel-heading'><h5>Create a bid, yo</h5>
-      {{new-bid postBid='postBid' bidder=model}}
-    </div>
-    <div class='panel-body'>
-      {{bid-map }}
-    </div>
-</div>
+{{new-bid postBid='postBid' bidder=model}}
+<!-- {{#if showNewBidForm}}
+  <div class='panel panel-default'>
+      <div class='panel-heading'><h5>Create a bid, yo</h5>
+        {{new-bid postBid='postBid' bidder=model}}
+      </div>
+      <div class='panel-body'>
+        {{bid-map }}
+      </div>
+  </div>
+{{else}}
+  {{md-btn action='showBidForm' text='Post a New Bid!'}}
+{{/if}} -->

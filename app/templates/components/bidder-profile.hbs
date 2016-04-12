@@ -1,11 +1,11 @@
-{{#if showProfile}}
+
   <div class='page-header'>
-    currently logged in: {{bidder.firstName}} {{bidder.lastName}}
-    <br>phone: {{bidder.phone}}
-    {{#each bidder.bids as |bid|}}
-      {{bid-tile bid=bid}}
+    <h2>{{bidder.firstName}} {{bidder.lastName}}'s Profile</h2>
+    <br>
+    <h5>Phone: {{bidder.phone}}</h5>
+    <h5>Email: {{bidder.email}}</h5>
+    <h4>{{bidder.firstName}}'s Bid History</h4>
+    {{#each sortedBids as |bid|}}
+      {{#link-to 'bid' bid.id}}{{bid-tile bid=bid}}{{/link-to}}
     {{/each}}
   </div>
-{{else}}
-{{/if}}
-{{md-btn action='showProfile' text='show profile'}}

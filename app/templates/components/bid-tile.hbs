@@ -1,7 +1,15 @@
-{{bid.bidder.firstName}}
-{{bid.location}}
-{{bid.title}}
-${{bid.payment}}
-{{bid.description}}
-{{bid.jobStart}}
-{{bid.jobEnd}}
+{{#if bid.active}}
+  <div class="">
+    <hr>
+    <h6>Title: {{bid.title}}</h6>
+    <h6>Bid Value: ${{bid.payment}}</h6>
+    <h6>Posted: {{moment-format bid.date}}</h6>
+  </div>
+{{else}}
+  <div class="inactive">
+    <hr>
+    <h6>Title: {{bid.title}}</h6>
+    <h6>Bid Value: ${{bid.payment}}</h6>
+    <h6>Posted: {{moment-format bid.date}}</h6>
+  </div>
+{{/if}}

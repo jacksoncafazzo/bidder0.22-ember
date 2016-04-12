@@ -1,33 +1,49 @@
-<form>
-  {{#if categoryShow}}
-  Categories:
-    {{#md-radios
-      selection=category
-      optionValuePath='id'
-      optionLabelPath='text'}}
-      <p>{{md-radio value='general' name="General"}}</p>
-      <p>{{md-radio value='yard' name="Yard/Garden"}}</p>
-    {{/md-radios}}
-  {{else}}
-    {{md-btn action='showCategories' text='Categories'}}
-  {{/if}}
-  <br>
-  <br>
-  Service Details:
-  {{#md-radios
-    selection=providing
-    optionValuePath='id'
-    optionLabelPath='text'}}
-    <p>{{md-radio value=true name="I'm Providing a Service"}}</p>
-    <p>{{md-radio value=false name="I'm Seeking a Service "}}</p>
-  {{/md-radios}}
-<br>
-  {{md-input value=title label="Bid Title" validate="true"}}
-  {{md-input value=payment label="Payment offer" validate="true" type='number'}}
-  {{md-textarea value=description label="Description" validate="true"}}
-  Ideal Job Start Date:
-  {{md-input value=jobStart type='date' validate="true"}}
-  Ideal Job End Date:
-  {{md-input value=jobEnd type='date' validate="true"}}
-  {{md-btn action='postBid' text='post bid'}}
-</form>
+{{#if showNewBidForm}}
+  <div class='panel panel-default'>
+      <div class='panel-heading'><h5>Create a bid, yo</h5>
+        <form>
+          {{#if categoryShow}}
+          Categories:
+            {{#md-radios
+              selection=category
+              optionValuePath='id'
+              optionLabelPath='text'}}
+              <p>{{md-radio value='general' name="General"}}</p>
+              <p>{{md-radio value='yard' name="Yard/Garden"}}</p>
+              <p>{{md-radio value='tech' name="Technology"}}</p>
+              <p>{{md-radio value='house' name="Household"}}</p>
+              <p>{{md-radio value='animals' name="Animals"}}</p>
+              <p>{{md-radio value='education' name="Education"}}</p>
+            {{/md-radios}}
+          {{/if}}
+          {{md-btn action='showCategories' text='Categories'}}
+          <br>
+          <br>
+          Service Details:
+          {{#md-radios
+            selection=providing
+            optionValuePath='id'
+            optionLabelPath='text'}}
+            <p>{{md-radio value=true name="I'm Providing a Service"}}</p>
+            <p>{{md-radio value=false name="I'm Seeking a Service "}}</p>
+          {{/md-radios}}
+        <br>
+          {{md-input value=title label="Bid Title" validate="true"}}
+          {{md-input value=location label="Bid Location" validate="true"}}
+          {{md-input value=payment label="Payment offer" validate="true" type='number'}}
+          {{md-textarea value=description label="Description" validate="true"}}
+          Ideal Job Start Date:
+          {{md-input value=jobStart type='date' validate="true"}}
+          Ideal Job End Date:
+          {{md-input value=jobEnd type='date' validate="true"}}
+          {{md-btn action='postBid' text='post bid'}}
+        </form>
+
+      </div>
+      <div class='panel-body'>
+        {{bid-map }}
+      </div>
+  </div>
+{{else}}
+  {{md-btn action='showBidForm' text='Post a New Bid!'}}
+{{/if}}

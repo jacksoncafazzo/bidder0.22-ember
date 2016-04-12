@@ -1,1 +1,20 @@
-{{yield}}
+<div class="">
+  <h6>Title: {{bid.title}}</h6>
+  <h6>Bid Value: ${{bid.payment}}</h6>
+  <h6>Location: {{bid.location}}</h6>
+  <h6>Description: {{bid.description}}</h6>
+  <h6>Start Date: {{bid.jobStart}}</h6>
+  <h6>End Date: {{bid.jobEnd}}</h6>
+  <h6>Active: {{bid.active}}</h6>
+  {{#if bid.providing}}
+    <h6>I am providing this service</h6>
+  {{else}}
+      <h6>I am seeking this service</h6>
+  {{/if}}
+  <h6>Bid Posted: {{moment-from-now bid.date}}</h6>
+  {{#if bid.active}}
+  <a {{action 'deactivateBid' bid}} class="btn">deactivate</a>
+  {{else}}
+  <a {{action 'activateBid' bid}} class="btn">Activate</a>
+  {{/if}}
+</div>
