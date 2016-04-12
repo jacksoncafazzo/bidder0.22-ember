@@ -2,9 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   categoryShow: false,
+  showNewBidForm: false,
   actions: {
     showCategories() {
-      this.set('categoryShow', true);
+      this.toggleProperty('categoryShow');
+    },
+    showBidForm() {
+      this.set('showNewBidForm', true);
     },
     postBid() {
       var params = {
@@ -19,6 +23,7 @@ export default Ember.Component.extend({
       };
       this.sendAction('postBid', params);
       this.set('categoryShow', false);
+      this.set('showNewBidForm', false);
     }
   }
 });
