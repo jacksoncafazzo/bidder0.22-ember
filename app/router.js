@@ -8,9 +8,8 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('sign-up');
   this.route('sign-in');
-  this.authenticatedRoute('myprofile', {path: '/myprofile/:myprofile_id'});
-  // this.route('bid', {path:'/bid_id'});
-
+  this.authenticatedRoute('bidder', {path: '/bidder/:bidder_id'});
+  this.authenticatedRoute('bid', {path: '/bid/:bid_id'});
 });
 
 export default Router;

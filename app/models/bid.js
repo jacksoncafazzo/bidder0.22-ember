@@ -7,6 +7,6 @@ export default DS.Model.extend({
   jobStart: DS.attr(),
   jobEnd: DS.attr(),
   marker: DS.attr(),
-  myprofile: DS.belongsTo('myprofile', { async: true }),
-  jobbers: DS.hasMany('jobbers', { async: true })
+  bidder: DS.belongsTo('bidder', { async: true })
+  // jobbers: DS.hasMany('jobbers', { async: true })
 });
