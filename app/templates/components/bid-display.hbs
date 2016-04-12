@@ -12,10 +12,8 @@
       <h6>I am seeking this service</h6>
   {{/if}}
   {{#if bid.active}}
-  <!-- {{md-btn action='deactivateBid' bid=bid text='Deactivate Bid'}} -->
-  <button {{action 'deactivateBid' bid}}>deactivate</button>
+  <a {{action 'deactivateBid' bid}} class="btn">deactivate</a>
   {{else}}
-  <!-- {{md-btn action='activateBid' text='Activate Bid'}} -->
-  <button {{action 'activateBid' bid}}>Activate</button>
+  <a {{action 'activateBid' bid}} class="btn">Activate</a>
   {{/if}}
 </div>
