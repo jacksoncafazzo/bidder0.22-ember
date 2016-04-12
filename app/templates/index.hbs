@@ -1,6 +1,6 @@
 {{#if session.isAuthenticated}}
   Welcome, <div id="email"> {{session.currentUser.email}}</div>
-  {{new-bid postBid='postBid'}}
+{{new-profile saveProfile='saveProfile'}}
   {{bid-map }}
 {{else}}
   <h4>Welcome to Bidder!</h4>

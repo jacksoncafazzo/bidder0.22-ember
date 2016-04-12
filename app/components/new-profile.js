@@ -1,14 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  // model(params) {
+  //   return this.store('bidder', params.bidder_id);
+  // },
   actions: {
-    save1() {
+    saveProfile() {
       var params = {
         firstName: this.get('firstName'),
         lastName: this.get('lastName'),
-        phone: this.get('phone'),
+        phone: this.get('phone')
       };
-      this.sendAction('save2', params);
+      this.sendAction('saveProfile', params);
     }
   }
 });

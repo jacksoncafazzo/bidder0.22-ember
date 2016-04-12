@@ -1,15 +1,12 @@
-<div class='page-header'>
-  currently logged in: {{model.firstName}} {{model.lastName}}
-  <br>{{session.currentUser.email}} -- if i'm blank this bad
-  <br>{{model.phone}}
-  <img src='{{session.currentUser.profileImageURL}}' />
-</div>
+
+{{bidder-profile bidder=model}}
+
+
 <div class='panel panel-default'>
     <div class='panel-heading'><h5>Create a bid, yo</h5>
-
+      {{new-bid postBid='postBid' bidder=model}}
     </div>
     <div class='panel-body'>
-      {{outlet}}
       {{bid-map }}
     </div>
 </div>
