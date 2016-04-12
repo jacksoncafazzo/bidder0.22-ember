@@ -2,9 +2,8 @@
   <div class='page-header'>
     currently logged in: {{bidder.firstName}} {{bidder.lastName}}
     <br>phone: {{bidder.phone}}
-    {{#each bidder.bids as bid}}
-      {{bid.title}}<br>
-
+    {{#each bidder.bids as |bid|}}
+      {{bid-tile bid=bid}}
     {{/each}}
   </div>
 {{else}}
