@@ -9,7 +9,7 @@ export default Ember.Component.extend({
     this.mapCanvas.setMapTypeId(this.map.maps.MapTypeId.ROADMAP);
   },
   beforeModel() {
-    google.maps.event.addDomListener(window, "load", initialize);
+    this.map.maps.event.addDomListener(window, "load", this.initialize);
   },
   lat: 45.52982577726017,
   lng: -122.69130210876466,
@@ -65,23 +65,23 @@ export default Ember.Component.extend({
       // this.get('map').findMap(container, options);
 
     bid(event) {
-      // var map = new google.maps.Map(document.getElementById('bidmap'), {
-      //   zoom: this.zoom,
-      //   center: {
-      //     lat: this.lat,
-      //     lng: this.lng
-      //   }
-      // });
-      // map = map.maps.select('bidmap');
-      // var marker = new google.maps.Marker({
-      //   position: {
-      //     lat: event.latLng.lat(),
-      //     lng: event.latLng.lng()
-      //   },
-      //   map: this.get('map'),
-      //   title: "Bid of Marvels"
-      // });
-      console.log("haaay");
+      var map = new this.map.maps.Map(document.getElementById('bidmap'), {
+        zoom: this.zoom,
+        center: {
+          lat: this.lat,
+          lng: this.lng
+        }
+      });
+      map = map.maps.select('bidmap');
+      var marker = new this.map.maps.Marker({
+        position: {
+          lat: event.latLng.lat(),
+          lng: event.latLng.lng()
+        },
+        map: this.get('map'),
+        title: "Bid of Marvels"
+      });
+      console.log("haaay", marker);
       // marker.setMap(this.map);
     }
   },

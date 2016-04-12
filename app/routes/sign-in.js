@@ -4,11 +4,14 @@ export default Ember.Route.extend({
   showNewProfile: false,
   actions: {
     save3(params) {
+      var session = this.get('session');
       params['email'] = this.get('session.currentUser.email');
       console.log(params);
       var newProfile = this.store.createRecord('myprofile', params);
       newProfile.save();
-      console.log(newProfile);
+      session['userId'] = newProfile.id;
+      console.log(session);
+      
       this.transitionTo('myprofile', newProfile.id);
     }
   }

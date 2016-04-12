@@ -9,6 +9,8 @@ Router.map(function() {
   this.route('sign-up');
   this.route('sign-in');
   this.authenticatedRoute('myprofile', {path: '/myprofile/:myprofile_id'});
+  // this.route('bid', {path:'/bid_id'});
+
 });
 
 export default Router;

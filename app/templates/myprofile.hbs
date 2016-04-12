@@ -1,12 +1,13 @@
 <div class='page-header'>
-    <h5>Welcome, you are authenticated!</h5>
+  currently logged in: {{model.firstName}} {{model.lastName}}
+  <br>{{session.currentUser.email}} -- if i'm blank this bad
+  <br>{{model.phone}}
+  <img src='{{session.currentUser.profileImageURL}}' />
 </div>
 <div class='panel panel-default'>
-    <div class='panel-heading'>{{session.currentUser.email}}</div>
+    <div class='panel-heading'><h5>Create a bid, yo</h5></div>
+    {{outlet}}
     <div class='panel-body'>
-        <img src='{{session.currentUser.profileImageURL}}' />
+      {{bid-map }}
     </div>
 </div>
-Hey there! Your name is: {{model.firstName}} {{model.lastName}}
-Your email is {{model.email}}
-and your phone is {{model.phone}}
