@@ -1,5 +1,15 @@
-{{log bidder}}
 <form>
+  {{#if categoryShow}}
+    {{#md-radios
+      selection=radioSelection
+      optionValuePath='id'
+      optionLabelPath='text'}}
+      <p>{{md-radio value="general" name="General"}}</p>
+      <p>{{md-radio value="yard" name="Yard/Garden"}}</p>
+    {{/md-radios}}
+  {{else}}
+    {{md-btn action='showCategories' text='Categories'}}
+  {{/if}}
   {{md-input value=title label="Bid Title" validate="true"}}
   {{md-input value=payment label="Payment offer" validate="true" type='number'}}
   {{md-textarea value=description label="Description" validate="true"}}
