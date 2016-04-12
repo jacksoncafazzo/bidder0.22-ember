@@ -17,36 +17,9 @@ export default Ember.Component.extend({
   mapCanvas: {},
   markers: Ember.A([
     {
-      id: 'unique-id',        // Recommended
-      lat: 32.75494243654723, // Required
-      lng: -86.8359375,       // Required
-      click: function(event, marker) {},
-      rightclick: function(event, marker) {},
-      dblclick: function(event, marker) {},
-      mouseover: function(event, marker) {},
-      mouseout: function(event, marker) {},
-      mouseup: function(event, marker) {},
-      mousedown: function(event, marker) {},
-      drag: function(event, marker) {},
-      dragstart: function(event, marker) {},
-      dragend: function(event, marker) {},
-      // anchorPoint: new google.maps.Point(),
-      // animation: google.maps.Animation.DROP,
-      // attribution: new google.maps.Attribution(),
-      clickable: true,
-      crossOnDrag: true,
-      cursor: 'pointer',
-      draggable: true,
-      // icon: 'beachflag-8f33bab9b0c154462489b35140f29fae.png',
-      label: 'A',
-      opacity: 0.3,
-      optimized: true,
-      // place: new google.maps.MarkerPlace(),
-      // position: new google.maps.LatLng(),
-      // shape: new google.maps.MarkerShape(),
-      title: 'string',
-      visible: true,
-      zIndex: 999
+      lat: 42,
+      lng: -122,
+
     }
   ]),
   showMap: false,
@@ -55,39 +28,43 @@ export default Ember.Component.extend({
     showMap() {
       this.set('showMap', true);
     },
-    bid(event) {
+    placeMarker(event) {
       // make the infowindow with bid info-- we made it already. user chooses what bid to add to the infowindow?
-      var marker = {
-        lat: event.latLng.lat(),
-        lng: event.latLng.lng(),
-        label: "Bid of Marvels",
-        clickable: true,
-        crossOnDrag: true,
-        cursor: 'pointer',
-        draggable: true,
-        optimized: true,
-        visible: true,
-        zIndex: 999,
-        click: function(event, marker) {},
-        rightclick: function(event, marker) {},
-        dblclick: function(event, marker) {},
-        mouseover: function(event, marker) {},
-        mouseout: function(event, marker) {},
-        mouseup: function(event, marker) {},
-        mousedown: function(event, marker) {},
-        drag: function(event, marker) {},
-        dragstart: function(event, marker) {},
-        dragend: function(event, marker) {},
-        //get google api in here for these
-        // anchorPoint: new google.maps.Point(),
-        // animation: google.maps.Animation.DROP,
-        // attribution: new google.maps.Attribution(),
-        // place: new google.maps.MarkerPlace(),
-        // position: new google.maps.LatLng(),
-        // shape: new google.maps.MarkerShape(),
-      };
-      console.log("haaay", marker);
-      this.markers.addObject(marker);
+      if (this.markers.length === 1) {
+        var marker = {
+          lat: event.latLng.lat(),
+          lng: event.latLng.lng(),
+          label: "Bid of Marvels",
+          clickable: true,
+          crossOnDrag: true,
+          cursor: 'pointer',
+          draggable: true,
+          optimized: true,
+          visible: true,
+          zIndex: 999,
+          click: function(event, marker) {},
+          rightclick: function(event, marker) {},
+          dblclick: function(event, marker) {},
+          mouseover: function(event, marker) {},
+          mouseout: function(event, marker) {},
+          mouseup: function(event, marker) {},
+          mousedown: function(event, marker) {},
+          drag: function(event, marker) {},
+          dragstart: function(event, marker) {},
+          dragend: function(event, marker) {},
+          //get google api in here for these
+          // anchorPoint: new google.maps.Point(),
+          // animation: google.maps.Animation.DROP,
+          // attribution: new google.maps.Attribution(),
+          // place: new google.maps.MarkerPlace(),
+          // position: new google.maps.LatLng(),
+          // shape: new google.maps.MarkerShape(),
+        };
+        console.log("haaay", marker);
+
+        this.markers.addObject(marker);
+      }
+
     }
   },
 
