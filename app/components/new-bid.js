@@ -25,7 +25,8 @@ export default Ember.Component.extend({
         jobStart: this.get('jobStart'),
         jobEnd: this.get('jobEnd'),
         bidder: this.get('bidder'),
-        marker: this.get(this.marker)
+        latitude: this.marker.lat,
+        longitude: this.marker.lng
       };
       console.log(marker);
       this.sendAction('postBid', params);
