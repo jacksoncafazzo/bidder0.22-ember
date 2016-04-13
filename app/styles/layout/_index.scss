@@ -1,16 +1,4 @@
-.hero-image {
-  background-image: url("/img/laundry-bg.png");
-  width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
-.hero-heading {
-  color: white;
-  text-align: center;
-  text-shadow: 1px 1px black;
-  padding-top: 22%;
-}
 
 .info-row {
 text-align: center;
@@ -53,6 +41,14 @@ height: 30em;
     padding-top: 40px;
     color: rgb(51, 51, 51);;
     font-weight: 300;
+  }
+}
+
+@media (max-width: 695px) {
+  .col {
+    p {
+      font-size: 16px;
+    }
   }
 }
 
