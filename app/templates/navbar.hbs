@@ -4,13 +4,28 @@
   {{#link-to 'index' tagName='li' class='topLink'}}
 
   {{/link-to}}
-  {{#if session.isAuthenticated}}
-  {{#link-to 'bidder'}}My Profile{{/link-to}}
-  {{md-btn action='signOut' text='sign out'}}
+
+
+  <!-- {{#if session.isAuthenticated}}
+   {{#link-to 'bidder'}}My Profile{{/link-to}} -->
+  <!-- {{md-btn action='signOut' text='sign out'}}
   {{else}}
   {{#link-to 'sign-up' class="sign-up"}}Sign-Up{{/link-to}}
-    {{#link-to 'sign-in' class="sign-in"}}Sign-in{{/link-to}}
+    {{#link-to 'sign-in' class="sign-in"}}Sign-in{{/link-to}} -->
   <!-- <a href='sign-up' class='btn'>Sign Up</a>
   <a href='sign-in' class='btn'>Sign In</a> -->
-  {{/if}}
+  <!-- {{/if}}  -->
+  {{#unless session.isAuthenticated}}
+  <li>
+    <a href="#" {{action 'login' }} class='btn'>Login</a>
+  </li>
+  {{else}}
+  <li>
+    <a href='http://twitter.com/{{session.currentUser.username}}' target='_blank' class="profile">
+      <img src='{{session.currentUser.profileImageURL}}' height='50px' width='50px'/>
+    </a>
+  </li>
+  <li><a href="#" {{action 'logout' }} class='btn'>Logout</a></li>
+  {{/unless}}
+
 {{/md-navbar}}

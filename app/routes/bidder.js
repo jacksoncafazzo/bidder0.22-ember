@@ -1,10 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  userId: "",
-
   model(params) {
-    this.userId = params.bidder_id;
     return this.store.findRecord('bidder', params.bidder_id);
   },
   actions: {
@@ -12,13 +9,16 @@ export default Ember.Route.extend({
     postBid(params) {
       var newBid = this.store.createRecord('bid', params);
       var bidder = params.bidder;
-      console.log(params);
+      // console.log(params);
       bidder.get('bids').addObject(newBid);
       newBid.save().then(function() {
         return bidder.save();
       });
-      this.transitionTo('bidder', params.bidder);
+      this.transitionTo('bidder', params.bidder.uid);
     },
+    saveUser() {
+      console.log("yeah");
+    }
 
   }
 });
