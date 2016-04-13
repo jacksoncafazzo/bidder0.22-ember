@@ -1,5 +1,5 @@
 {{#if session.isAuthenticated}}
-  Welcome, {{session.currentUser.username}}
+  <!-- Welcome, {{session.currentUser.username}}
   <br>
   logged in user:
   {{#each model.user as |user|}}
@@ -7,16 +7,15 @@
     <img src="{{user.avatar}}" alt="user pic" />
   {{/each}}
   <br>
-  has these bidder profiles:
+  has these bidder profiles: -->
   <ul>
     {{#each model.bidder as |bidder|}}
-    <li>{{bidder-profile bidder=bidder}}</li>
+    <!-- {{new-bid postBid='postBid' bidder=bidder}} -->
+    <!-- {{bid-map bidder=bidder}} -->
+    <!-- <li>{{bidder-profile bidder=bidder}}</li> -->
     {{/each}}
   </ul>
-
   {{model.bidder.firstName}}
-  {{new-profile saveProfile='saveProfile'}}
-  {{bid-map }}
 
 
   {{else}}

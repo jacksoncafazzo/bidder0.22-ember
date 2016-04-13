@@ -8,7 +8,7 @@ export default Ember.Route.extend({
     // var uid = this.get('session.uid');
     var user = this.getUser(uid);
 
-    console.log(this.get('user'));
+    // console.log(this.get('user'));
     var bidder = this.getBidder(user.bidder_id);
     // console.log(bidder);
     return Ember.RSVP.hash({
@@ -57,7 +57,8 @@ export default Ember.Route.extend({
       var newBidder = this.store.createRecord('bidder', params);
       newBidder.save();
       this.transitionTo('index');
-    }
+    },
+    
   }
 
 
