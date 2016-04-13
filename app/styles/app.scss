@@ -4,6 +4,7 @@
 @import "base/nav";
 @import "base/buttons";
 @import "base/header";
+@import "layout/index";
 
 
 *,
@@ -21,16 +22,13 @@ html, body {
 
 .carousel-item img {
   width: 100%;
-  
+
 }
 
 .ember-cli-g-map {
   height: 400px;
 }
 
-h4  {
-  color: $primary-color;
-}
 
 .inactive {
   color: red;
