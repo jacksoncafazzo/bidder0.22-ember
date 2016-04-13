@@ -4,11 +4,35 @@ const {get} = Ember;
 
 
 export default Ember.Route.extend({
+  getUser(uid) {
+    var user = this.store.query('user', {
+      orderBy: 'uid',
+      equalTo: uid,
+    });
+    return user;
+  },
+  getBidder(uid) {
+    var bidder = this.store.query('bidder', {
+      orderBy: 'uid',
+      equalTo: uid
+    });
+    return bidder;
+  },
   beforeModel(){
     return get(this,'session').fetch().catch(function(){});
   },
-  model(){
-    return this.store.findAll('bidder');
+  model() {
+    var uid = this.get('session.uid');
+    // var uid = this.get('session.uid');
+    var user = this.getUser(uid);
+
+    // console.log(this.get('user'));
+    var bidder = this.getBidder(user.bidder_id);
+    // console.log(bidder);
+    return Ember.RSVP.hash({
+      user: user,
+      bidder: bidder
+    });
   },
   actions:{
     login(){
