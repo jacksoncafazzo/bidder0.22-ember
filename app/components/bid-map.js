@@ -1,6 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  clickLat: 0,
+  clickLng: 0,
+  // showPosition: Ember.computed('clickLat', 'clickLng', function() {
+  //   return this.get('clickLat'), this.get('clickLng');
+  // }),
 
   // initialize() {
   //   this.mapCanvas = new this.map.maps.Map(document.getElementById("bid-map"));
@@ -15,6 +20,9 @@ export default Ember.Component.extend({
   lng: -122.69130210876466,
   zoom: 15,
   mapCanvas: {},
+  placedMarker: Ember.computed('markers', function() {
+    return this.get.indexOf('markers', 0);
+  }),
   markers: Ember.A([
     {
       lat: 42,
@@ -31,9 +39,11 @@ export default Ember.Component.extend({
     placeMarker(event) {
       // make the infowindow with bid info-- we made it already. user chooses what bid to add to the infowindow?
       if (this.markers.length === 1) {
+        this.set('clickLat', event.latLng.lat());
+        this.set('clickLng', event.latLng.lng());
         var marker = {
-          lat: event.latLng.lat(),
-          lng: event.latLng.lng(),
+          lat: this.clickLat,
+          lng: this.clickLng,
           label: "Bid of Marvels",
           clickable: true,
           crossOnDrag: true,
@@ -60,9 +70,10 @@ export default Ember.Component.extend({
           // position: new google.maps.LatLng(),
           // shape: new google.maps.MarkerShape(),
         };
-        console.log("haaay", marker);
+        // console.log("haaay", marker);
 
         this.markers.addObject(marker);
+        this.sendAction('createMarker', marker);
       }
 
     }

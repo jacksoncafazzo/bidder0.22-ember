@@ -1,9 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+
+  markers: [
+
+  ],
   model(params) {
       return this.store.findRecord('bidder', params.bidder_id)
-    },
+  },
   actions: {
     postBid(params) {
       var newBid = this.store.createRecord('bid', params);
@@ -14,6 +18,9 @@ export default Ember.Route.extend({
       });
       this.transitionTo('index');
     },
-
+    createMarker(marker) {
+      this.markers.push(marker);
+      // console.log(this.markers);
+    }
   }
 });
