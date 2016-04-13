@@ -1,23 +1,39 @@
 {{#if session.isAuthenticated}}
-  <!-- Welcome, {{session.currentUser.username}}
-  <br>
-  logged in user:
-  {{#each model.user as |user|}}
-    {{user.uid}}
-    <img src="{{user.avatar}}" alt="user pic" />
-  {{/each}}
-  <br>
-  has these bidder profiles: -->
+
   <ul>
     {{#each model.bidder as |bidder|}}
-    <!-- {{new-bid postBid='postBid' bidder=bidder}} -->
-    <!-- {{bid-map bidder=bidder}} -->
-    <!-- <li>{{bidder-profile bidder=bidder}}</li> -->
+      {{bidder.firstName}}
+
     {{/each}}
   </ul>
-  {{model.bidder.firstName}}
 
+  <div class="row s12 hero-text">
+    <h2>Welcome to Bidder</h2>
+  </div>
+  {{md-parallax image="/img/laundry-bg.png" class="parallax-img1"}}
+  <div class="row container">
+    <div class="col s12">
+      <h3>How it Works</h3>
+    </div>
+    <div class="col s4">
+      <i class="medium material-icons">mode_edit</i>
+      <p>Bidders post odd jobs and what they are willing to pay.</p>
+    </div>
+    <div class="col s4">
+      <i class="medium material-icons">thumb_up</i>
+      <p>Jobbers let Bidders know they are interested in offering their services.</p>
+    </div>
+    <div class="col s4">
+      <i class="medium material-icons">vpn_key</i>
+      <p>Bidders contact interested jobbers to get the job done!</p>
+    </div>
+  </div>
+    <div class="section grey lighten-2">
+    </div>
+  {{md-parallax image="/img/gardening-bg.png" class="parallax-img2"}}
+  <div class="row responsive-sm">
 
+  </div>
   {{else}}
   <div class="row s12 hero-text">
     <h2>Welcome to Bidder</h2>
@@ -44,7 +60,7 @@
     </div>
   {{md-parallax image="/img/gardening-bg.png" class="parallax-img2"}}
   <div class="row responsive-sm">
-    
+
 
   </div>
 
