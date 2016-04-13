@@ -8,19 +8,24 @@
     color: $primary-color;
     font-family: $nav-font;
   }
-  .topLink {
-   border-radius: 5px;
-  }
   .topLink:hover {
     a {
       background-color: $primary-color;
       color: white;
-      border-radius: 5px;
 
     }
   }
-  .profile {
-    margin-top: 7px;
-  }
+}
 
+.topLink {
+  a {
+    color: $primary-color;
+  }
+}
+
+.login {
+  a {
+    color: $primary-color;
+
+  }
 }
