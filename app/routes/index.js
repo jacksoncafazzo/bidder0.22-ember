@@ -57,7 +57,18 @@ export default Ember.Route.extend({
       var newBidder = this.store.createRecord('bidder', params);
       newBidder.save();
       this.transitionTo('index');
-    }
+    },
+    postBid(params) {
+      var newBid = this.store.createRecord('bid', params);
+      newBid['bidder'] = this.get('bidder');
+      console.log(this.get('bidder'));
+      // console.log(params);
+      bidder.get('bids').addObject(newBid);
+      newBid.save().then(function() {
+        return bidder.save();
+      });
+      this.transitionTo('bidder', params.bidder.uid);
+    },
   }
 
 
