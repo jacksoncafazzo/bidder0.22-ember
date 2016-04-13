@@ -14,12 +14,16 @@
         <a href="#" {{action 'login' }}>Login</a>
       </li>
       {{else}}
-      <li>
-        <a href='http://twitter.com/{{session.currentUser.username}}' target='_blank' class="profile">
-          <img src='{{session.currentUser.profileImageURL}}' height='50px' width='50px'/>
-        </a>
-      </li>
       <li><a href="#" {{action 'logout' }}>Logout</a></li>
+      <li>
+        <div class="chip">
+          <a href='http://twitter.com/{{session.currentUser.username}}' target='_blank' class="profile">
+            <img src='{{session.currentUser.profileImageURL}}' height='50px' width='50px' alt='contact photo'/>
+            {{session.currentUser.username}}
+          </a>
+        </div>
+
+      </li>
       {{/unless}}
       {{/md-navbar}}
     <div class="container-fluid hero">
