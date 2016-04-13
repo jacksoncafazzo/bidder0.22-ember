@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('sign-in');
   this.authenticatedRoute('bidder', {path: '/bidder/:bidder_id'});
   this.authenticatedRoute('bid', {path: '/bid/:bid_id'});
+  this.route('all-bids');
 });
 
 export default Router;
