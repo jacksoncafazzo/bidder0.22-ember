@@ -1,6 +1,28 @@
 <div class="container-fluid">
-  {{partial 'navbar'}}
-  <div class="container-fluid hero">
+    {{#md-navbar name='BIDDER'}}
+      {{#link-to 'index' tagName='li' class='topLink'}}
+
+      {{/link-to}}
+      {{#each model.bidder as |bidder|}}
+        {{#link-to 'bidder' bidder.id tagName='li' class='topLink'}}
+          Profile
+        {{/link-to}}
+      {{/each}}
+
+      {{#unless session.isAuthenticated}}
+      <li>
+        <a href="#" {{action 'login' }} class='btn'>Login</a>
+      </li>
+      {{else}}
+      <li>
+        <a href='http://twitter.com/{{session.currentUser.username}}' target='_blank' class="profile">
+          <img src='{{session.currentUser.profileImageURL}}' height='50px' width='50px'/>
+        </a>
+      </li>
+      <li><a href="#" {{action 'logout' }} class='btn'>Logout</a></li>
+      {{/unless}}
+      {{/md-navbar}}
+    <div class="container hero">
     {{outlet}}
   </div>
 
