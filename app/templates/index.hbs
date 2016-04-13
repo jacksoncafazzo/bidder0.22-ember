@@ -1,12 +1,25 @@
 {{#if session.isAuthenticated}}
   Welcome, {{session.currentUser.username}}
-  {{#each model as |user|}}
-    {{user.firstName}}
+  <br>
+  logged in user:
+  {{#each model.user as |user|}}
+    {{user.uid}}
+    <img src="{{user.avatar}}" alt="user pic" />
   {{/each}}
-{{new-profile saveProfile='saveProfile'}}
-  {{bid-map }}
-{{else}}
+  <br>
+  has these bidder profiles:
+  <ul>
+    {{#each model.bidder as |bidder|}}
+    <li>{{bidder-profile bidder=bidder}}</li>
+    {{/each}}
+  </ul>
 
+  {{model.bidder.firstName}}
+  {{new-profile saveProfile='saveProfile'}}
+  {{bid-map }}
+
+
+  {{else}}
   <h4>Welcome to Bidder!</h4>
   <div class="carousel">
     <a class="carousel-item" href="#one!"><img src="/assets/img/techhelp-bg.png"></a>
