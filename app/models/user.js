@@ -5,5 +5,5 @@ export default DS.Model.extend({
   username: DS.attr('string'),
   avatar: DS.attr('string'),
   bidder: DS.belongsTo('bidder', { async: true }),
-  bids: DS.hasMany('bids', { async: true })
+  // bids: DS.hasMany('bids', { async: true })
 });

@@ -20,7 +20,9 @@ export default Ember.Component.extend({
         description: this.get('description'),
         jobStart: this.get('jobStart'),
         jobEnd: this.get('jobEnd'),
+        bidder: this.get('bidder')
       };
+      console.log(params.bidder);
       this.sendAction('postBid', params);
       this.set('categoryShow', false);
       this.set('showNewBidForm', false);
