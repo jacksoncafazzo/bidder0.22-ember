@@ -5,13 +5,13 @@
       {{/link-to}}
       {{#each model.bidder as |bidder|}}
         {{#link-to 'bidder' bidder.id tagName='li' class='topLink'}}
-          Profile
+          <a href="#">Profile</a>
         {{/link-to}}
       {{/each}}
 
       {{#unless session.isAuthenticated}}
       <li>
-        <a href="#" {{action 'login' }} class='btn'>Login</a>
+        <a href="#" {{action 'login' }}>Login</a>
       </li>
       {{else}}
       <li>
@@ -19,7 +19,7 @@
           <img src='{{session.currentUser.profileImageURL}}' height='50px' width='50px'/>
         </a>
       </li>
-      <li><a href="#" {{action 'logout' }} class='btn'>Logout</a></li>
+      <li><a href="#" {{action 'logout' }}>Logout</a></li>
       {{/unless}}
       {{/md-navbar}}
     <div class="container-fluid hero">
