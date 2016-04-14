@@ -74,18 +74,47 @@ height: 30em;
   margin-bottom: 50px;
 }
 
-.imageLink1 {
+.hoverEffect {
   width: 400px;
   height: 160px;
   margin: 0 auto;
   margin-top:50px;
   margin-bottom:50px;
+
+  -webkit-transition: all 1s ease;
+   -moz-transition: all 1s ease;
+     -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    img {
+      margin-top:50px;
+      margin-bottom:50px;
+    }
 }
 
-.imageLink2 {
-  width: 400px;
-  height: 160px;
+.hoverEffect {
+  img:hover {
+    border: solid 2px $primary-color;
+  }
+}
+
+.wwd-statement {
+  h5 {
+    color: $primary-color;
+    font-weight: 300;
+  }
+  p {
+    font-size: 20px;
+    color: gray;
+  }
+}
+
+.whatWeDo-title {
+  h3 {
+  color: rgb(51, 51, 51);
+  font-weight: 300;
+
+  }
   margin: 0 auto;
-  margin-top:50px;
-  margin-bottom:50px;
+  text-align: center;
 }
