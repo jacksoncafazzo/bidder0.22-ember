@@ -1,16 +1,29 @@
 {{#if session.isAuthenticated}}
-
-  <ul>
+  <!-- <ul>
     {{#each model.bidder as |bidder|}}
-      {{bidder.firstName}}
-
+      Howdy {{bidder.firstName}}
     {{/each}}
-  </ul>
+  </ul> -->
+<div class="hero">
+  <section class="module parallax parallax-1">
+    <div class="container hero-text center">
+      <h2>Welcome to Bidder</h2>
 
-  <div class="row s12 hero-text">
-    <h2>Welcome to Bidder</h2>
-  </div>
-  {{md-parallax image="/img/laundry-bg.png" class="parallax-img1"}}
+      <h5>Thanks for authorizing!</h5>
+      <h4>Now...I bet you have things you need done.</h4>
+
+      <h3>We can help you get the word out!</h3>
+    </div>
+  </section>
+</div>
+
+
+
+
+<!-- <div class="row s12 container hero-text">
+
+</div> -->
+{{md-parallax image="/img/gardening-bg.png" class="parallax-img2"}}
   <div class="row container">
     <div class="col m12 s12">
       <h3>How it Works</h3>
@@ -28,7 +41,6 @@
       <p>Bidders contact interested jobbers to get the job done!</p>
     </div>
   </div>
-  {{md-parallax image="/img/gardening-bg.png" class="parallax-img2"}}
     <div class="section grey lighten-2">
       <div class="row setWidth">
         <div class="col s6">
@@ -62,7 +74,7 @@
   </div>
   <hr>
   <footer>
-    
+
   </footer>
 
   <!-- if not authenticated -->

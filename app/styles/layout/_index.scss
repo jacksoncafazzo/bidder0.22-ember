@@ -1,4 +1,29 @@
+.hero {
+  height: 500px;
+}
 
+.hero-text {
+  // position: absolute;
+  padding-top: 150px;
+
+  h2, h3, h4, h5 {
+    color: white;
+    text-shadow: 2px 2px rgb(51, 51, 51);
+    padding-bottom: 50px;
+  }
+}
+
+section.module.parallax {
+  height: 600px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+section.module.parallax-1 {
+  background-image: url(/img/laundry-bg.png);
+}
 
 .info-row {
 text-align: center;
@@ -14,15 +39,6 @@ height: 30em;
   position: relative;
 }
 
-.hero-text {
-  position: absolute;
-  padding-top: 300px;
-  padding-left: 45%;
-  h2 {
-    color: white;
-    text-shadow: 2px 2px rgb(51, 51, 51);
-  }
-}
 
 .col {
   text-align: center;
