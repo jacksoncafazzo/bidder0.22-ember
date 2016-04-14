@@ -130,3 +130,14 @@ height: 30em;
   max-width: 1600px;
   margin: 0 auto;
 }
+
+.hero-text {
+  a {
+    font-size: 120px;
+    color:$primary-color;
+    opacity: .8;
+  }
+  i {
+    padding-top: 70px;
+  }
+}

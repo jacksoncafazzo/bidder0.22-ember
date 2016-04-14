@@ -1,5 +1,9 @@
+
+<div class="bid-display-hero">
+
+</div>
 <div class="row">
-  <div class="col s6">
+  <div class="col s12">
     <h5>{{bid.title}}</h5>
     <h6>Bid Value: ${{bid.payment}}</h6>
     <h6>Location: {{bid.location}}</h6>
@@ -20,6 +24,8 @@
     {{/if}}
     {{log bid.marker.lat}}
   </div>
+</div>
+<div class="row">
   <div class="col s6 single-bid">
     <!-- <div class="map-circle">
 
@@ -27,6 +33,5 @@
     <div class="single-bidmap">
       {{g-maps name="single-bidmap" click='placeMarker' lat=bid.latitude lng=bid.longitude zoom=15 marker=marker}}
     </div>
-
   </div>
 </div>
