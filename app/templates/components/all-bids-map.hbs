@@ -1,20 +1,7 @@
 <div class="container all-bids">
-  <!-- {{#each bids as |bid|}}
-    {{bid.title}}
-  {{/each}} -->
-
   {{#if refresh}}
     {{g-maps name="bidmap" click='placeMarker' lat=lat lng=lng zoom=zoom markers=postedMarkers markers=allMarkers}}
   {{/if}}
   {{md-btn action='showMap' text='show bids'}}
-  <!-- <ul>
-    <li>clickLat: {{clickLat}}</li>
-    <li>clickLng: {{clickLng}}</li>
-    <li>placed markers:
-      {{#each markers as |marker|}}
-        {{marker.lat}}
-      {{/each}}
-    </li>
-  </ul> -->
 
 </div>

@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  // markers: [],
   model() {
     return Ember.RSVP.hash({
       postedMarkers: this.store.findAll('marker'),
@@ -14,7 +13,6 @@ export default Ember.Route.extend({
   actions: {
     createMarker(marker) {
       this.markers.push(marker);
-      // console.log(this.markers);
     }
   }
 });

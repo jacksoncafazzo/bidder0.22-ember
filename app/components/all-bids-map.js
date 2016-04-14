@@ -40,37 +40,9 @@ export default Ember.Component.extend({
           drag: function(e, marker) {},
           dragstart: function(e, marker) {},
           dragend: function(e, marker) {}
-
-        // label: "B",
-        // icon: '/img/donkeykong-sm.png',
-        // animation: google.maps.Animation.DROP,
-        // infowindow: {
-        //   content: "<p>yeaah</p>",
-        //   visible: true
-        // },
-        // clickable: true,
-        // crossOnDrag: true,
-        // cursor: 'pointer',
-        // draggable: true,
-        // optimized: true,
-        // visible: true,
-        // zIndex: 999,
-        // click: function(event, marker) {
-        //   this.infowindow.open(bidmap, marker);
-        // },
-        // rightclick: function(event, marker) {},
-        // dblclick: function(event, marker) {},
-        // mouseover: function(event, marker) {},
-        // mouseout: function(event, marker) {},
-        // mouseup: function(event, marker) {},
-        // mousedown: function(event, marker) {},
-        // drag: function(event, marker) {},
-        // dragstart: function(event, marker) {},
-        // dragend: function(event, marker) {},
       };
       this.get('allMarkers').push(marker);
     };
-  //  console.log(this.get('allMarkers'));
   },
   actions: {
     showMap() {
