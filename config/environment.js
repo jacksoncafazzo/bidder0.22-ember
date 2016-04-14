@@ -17,14 +17,14 @@ module.exports = function(environment) {
     },
     torii: {
       sessionServiceName: 'session',
-      providers: {
-        'facebook-oauth2': {
-          apiKey      : '1268010953226646',
-          xfbml      : true,
-          version    : 'v2.5',
-          scope      : 'email'
-        }
-      }
+      // providers: {
+      //   'facebook-oauth2': {
+      //     apiKey      : '1268010953226646',
+      //     xfbml      : true,
+      //     version    : 'v2.5',
+      //     scope      : 'email'
+      //   }
+      // }
     },
     googleMap: {
       apiKey: 'AIzaSyDPe_5UuDK4YnbIdaGodRrYaL7LkG9aS74'
