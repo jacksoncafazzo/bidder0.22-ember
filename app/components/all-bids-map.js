@@ -12,13 +12,35 @@ export default Ember.Component.extend({
   gmap: Ember.inject.service('g-map'),
   init() {
     this._super();
-    console.log("these are bids", (this.get('bids')));
+    var myMarkers = this.get('postedMarkers').map(function(marker) {
+      return marker;
+    });
+
+    var myBids = this.get('bids').map(function(bid) {
+      return bid;
+    });
+
     var postedMarkers = this.get('postedMarkers');
-    for (var i = 0; i< postedMarkers.get('length'); i++) {
-      console.log("lat: ", postedMarkers[i].get('lat'));
+
+    for (var i = 0; i< myMarkers.get('length'); i++) {
       var marker = {
-        lat: postedMarkers[i].get('lat'),
-        lng: postedMarkers[i].get('lng'),
+        lat: myMarkers[i].get('lat'),
+        lng: myMarkers[i].get('lng'),
+        infoWindow: {
+            content: '<p>' + myMarkers[i].get("bid.title") + '</p>',
+            visible: true
+          },
+          click: function(event, marker) {},
+          rightclick: function(event, marker) {},
+          dblclick: function(event, marker) {},
+          mouseover: function(event, marker) {},
+          mouseout: function(event, marker) {},
+          mouseup: function(event, marker) {},
+          mousedown: function(event, marker) {},
+          drag: function(e, marker) {},
+          dragstart: function(e, marker) {},
+          dragend: function(e, marker) {}
+
         // label: "B",
         // icon: '/img/donkeykong-sm.png',
         // animation: google.maps.Animation.DROP,
@@ -48,7 +70,7 @@ export default Ember.Component.extend({
       };
       this.get('allMarkers').push(marker);
     };
-    console.log(this.get('allMarkers'));
+  //  console.log(this.get('allMarkers'));
   },
   actions: {
     showMap() {
