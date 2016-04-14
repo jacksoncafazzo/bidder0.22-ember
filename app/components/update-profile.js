@@ -12,7 +12,7 @@ export default Ember.Component.extend({
         firstName: this.get('firstName'),
         lastName: this.get('lastName'),
         phone: this.get('phone')
-      }
+      };
       this.sendAction('updateProfile', bidder, params);
     }
   }
