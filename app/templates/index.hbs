@@ -1,27 +1,10 @@
 {{#if session.isAuthenticated}}
-  <!-- <ul>
-    {{#each model.bidder as |bidder|}}
-      Howdy {{bidder.firstName}}
-    {{/each}}
-  </ul> -->
   {{new-profile saveProfile="saveProfile"}}
 
 
-      <h5>Thanks for authorizing</h5>
+      <!-- <h5>Thanks for authorizing</h5>
 
-      <a href="index.hbs#ref"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
-
-    </div>
-  </section>
-</div>
-
-
-
-
-
-<!-- <div class="row s12 container hero-text">
-
-</div> -->
+      <a href="index.hbs#ref"><i class="fa fa-angle-down" aria-hidden="true"></i></a> -->
 {{md-parallax image="/img/gardening-bg.png" class="parallax-img2"}}
 
   <div class="row container grey-heading">
@@ -78,7 +61,6 @@
           </div>
         </div>
       </div>
-
       <div class="row whatWeDo-body">
         <div class="col s6">
           <div class="wwd-statement">
@@ -94,13 +76,13 @@
         </div>
       </div>
     </div>
-      {{md-parallax image="/img/techhelp-bg.png" class="parallax-img2"}}
+    {{md-parallax image="/img/techhelp-bg.png" class="parallax-img2"}}
+
 
   <div class="row footer-upper">
     <div class="col s4">
       <p>CONTACT US</p>
       <p class="contact">info@bidder.com</p>
-
     </div>
     <div class="col s4">
       <p>SOCIAL MEDIA</p>
@@ -110,7 +92,6 @@
       <p>ABOUT US</p>
       <p class="contact">link</p>
     </div>
-
   </div>
   <footer class="footer-lower">
     <p class="foot-padding">Bidder was created at <span>Epicodus</span> by Jackson Cafazzo, Jordan Meier, Daren Schaad, Lindsey Raffa, Brooke Hurford, Jessica Fix, and Taylor Pokoj.</p>
@@ -119,7 +100,7 @@
 
 
 
-  {{else}}
+{{else}}
   <!-- if session is not authenticated -->
   <div class="hero">
     <section class="module parallax parallax-1">
@@ -189,9 +170,5 @@
     <p class="foot-padding">Bidder was created at <span>Epicodus</span> by Jackson Cafazzo, Jordan Meier, Daren Schaad, Lindsey Raffa, Brooke Hurford, Jessica Fix, and Taylor Pokoj.</p>
     <p>Bidder | All Rights Reserved | Copyright 2016</p>
   </footer>
-
-
-
-
 
 {{/if}}
