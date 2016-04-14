@@ -1,6 +1,6 @@
 <div class="container">
   {{#each model.bids as |bid|}}
-    {{bid-tile bid=bid}}
+    {{#link-to 'bid' bid.id}}{{bid-tile bid=bid}}{{/link-to}}
   {{/each}}
 
 <ul>
