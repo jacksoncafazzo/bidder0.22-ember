@@ -14,6 +14,7 @@ export default Ember.Component.extend({
         phone: this.get('phone')
       }
       this.sendAction('updateProfile', bidder, params);
+
     }
   }
 });
