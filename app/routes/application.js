@@ -42,6 +42,7 @@ export default Ember.Route.extend({
     },
     logout(){
       get(this,'session').close();
+      this.transitionTo('/');
     },
     accessDenied() {
       this.transitionTo('/');

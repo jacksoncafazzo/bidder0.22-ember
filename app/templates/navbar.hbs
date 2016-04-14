@@ -1,34 +1,27 @@
 {{#md-navbar name='BIDDER'}}
-  <!-- A workaround to get the "active" class
-    to apply to the active <li> automatically -->
-  {{#link-to 'index' tagName='li' class='topLink'}}
+  <!-- {{#link-to 'index' tagName='li' class='topLink'}}
+    Bidder
+  {{/link-to}} -->
 
-  {{/link-to}}
-  {{#link-to 'bidder' tagName='li' class='topLink'}}
-  <a href="bidder">Profile</a>
-  {{/link-to}}
-
-
-  <!-- {{#if session.isAuthenticated}}
-   {{#link-to 'bidder'}}My Profile{{/link-to}} -->
-  <!-- {{md-btn action='signOut' text='sign out'}}
-  {{else}}
-  {{#link-to 'sign-up' class="sign-up"}}Sign-Up{{/link-to}}
-    {{#link-to 'sign-in' class="sign-in"}}Sign-in{{/link-to}} -->
-  <!-- <a href='sign-up' class='btn'>Sign Up</a>
-  <a href='sign-in' class='btn'>Sign In</a> -->
-  <!-- {{/if}}  -->
   {{#unless session.isAuthenticated}}
   <li>
-    <a href="#" {{action 'login' }} class='btn login'>Login</a>
+    <a href="#" {{action 'login' }}>login</a>
   </li>
   {{else}}
+  {{#each model.bidder as |bidder|}}
+  {{#link-to 'bidder' bidder.id tagName='li' class='topLink'}}
+  <li><a href="#">Profile</a></li>
+  {{/link-to}}
+  {{/each}}
+  <li><a href="#" {{action 'logout' }}>logout</a></li>
   <li>
-    <a href='http://twitter.com/{{session.currentUser.username}}' target='_blank' class="profile">
-      <img src='{{session.currentUser.profileImageURL}}' height='50px' width='50px'/>
-    </a>
-  </li>
-  <li><a href="#" {{action 'logout' }} class='btn'>Logout</a></li>
-  {{/unless}}
+    <div class="chip">
+      <a href='http://twitter.com/{{session.currentUser.username}}' target='_blank' class="profile">
+        <img src='{{session.currentUser.profileImageURL}}' height='50px' width='50px' alt='contact photo'/>
+        {{session.currentUser.username}}
+      </a>
+    </div>
 
-{{/md-navbar}}
+  </li>
+  {{/unless}}
+  {{/md-navbar}}
