@@ -5,15 +5,18 @@ export default Ember.Component.extend({
   clickLng: 0,
   lat: 45.52982577726017,
   lng: -122.69130210876466,
-  zoom: 15,
+  zoom: 14,
   mapCanvas: {},
-  // placedMarker: Ember.computed('markers', function() {
-  //   return this.get.indexOf('markers', 0);
+  // placedMarkers: Ember.computed('markers', function(markers) {
+  //   console.log(this.get('markers'));
+  //   this.set('markers', markers);
+  //   return markers;
   // }),
   markers: Ember.A([
     {
       lat: 42,
-      lng: -122
+      lng: -122,
+
     }
   ]),
   showMap: false,
@@ -63,9 +66,8 @@ export default Ember.Component.extend({
           dragend: function(event, marker) {},
 
         };
-
+        console.log(this.get('markers'));
         this.markers.addObject(marker);
-        this.sendAction('createMarker', marker);
       }
     },
 });

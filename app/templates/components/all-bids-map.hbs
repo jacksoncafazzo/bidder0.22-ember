@@ -1,6 +1,22 @@
 <div class="container">
+  {{#each bids as |bid|}}
+    {{bid.title}}
+  {{/each}}
+  {{#each markers as |marker|}}
+    {{marker.lat}}
+  {{/each}}
   {{g-maps name="bidmap" click='placeMarker' lat=lat lng=lng zoom=zoom markers=markers}}
+  <ul>
+    <li>clickLat: {{clickLat}}</li>
+    <li>clickLng: {{clickLng}}</li>
+    <li>placed markers:
+      {{#each markers as |marker|}}
+        {{marker.lat}}
+      {{/each}}
+    </li>
+  </ul>
+
   {{log bids.length}}
   <a href="#" {{action 'testFunction' bids}}>cornholio</a>
-  {{md-btn action='testFunction' text='butthole' bids=bids}}
+  {{md-btn action='testFunction' text='test' bids=bids}}
 </div>
