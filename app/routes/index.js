@@ -3,19 +3,20 @@ import Ember from 'ember';
 // const {RSVP: {Promise}} = Ember;
 
 export default Ember.Route.extend({
-  model() {
-    var uid = this.get('session.uid');
-    // var uid = this.get('session.uid');
-    var user = this.getUser(uid);
-
-    // console.log(this.get('user'));
-    var bidder = this.getBidder(user.bidder_id);
+  // model() {
+    // var uid = this.get('session.id');
+    // var user = this.store.query('user', {
+    //   orderBy: 'uid',
+    //   equalTo: uid,
+    // });
+    // console.log(user);
+    // var bidder = this.store.find('bidder', user.bidder_id);
     // console.log(bidder);
-    return Ember.RSVP.hash({
-      user: user,
-      bidder: bidder
-    });
-  },
+    // return Ember.RSVP.hash({
+    //   user: user,
+    //   bidder: bidder
+    // });
+  // },
   canHasNewUser() {
     var uid = this.get('session.uid');
     var username = this.get('session.currentUser.username');
@@ -58,7 +59,7 @@ export default Ember.Route.extend({
       newBidder.save();
       this.transitionTo('index');
     },
-    
+
   }
 
 
