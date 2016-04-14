@@ -1,6 +1,11 @@
-{{#each model as |bid|}}
-
+{{#each model.bids as |bid|}}
   {{bid-tile bid=bid}}
 {{/each}}
+<ul>
 
-{{all-bids-map bids=model}}
+{{#each model.markers as |marker|}}
+  lat: {{marker.lat}}
+
+{{/each}}
+</ul>
+{{all-bids-map bids=model.bids}}

@@ -6,17 +6,24 @@ export default Ember.Route.extend({
 
   ],
   model(params) {
-      return this.store.findRecord('bidder', params.bidder_id)
+      return this.store.findRecord('bidder', params.bidder_id);
   },
   actions: {
-    postBid(params) {
+    postBid(params, markerParams) {
+      var marker = this.store.createRecord('marker', markerParams);
+      marker.save();
+      params['marker'] = marker;
       var newBid = this.store.createRecord('bid', params);
+      marker['bid'] = newBid;
+      console.log(marker);
       var bidder = params.bidder;
       bidder.get('bids').addObject(newBid);
       newBid.save().then(function() {
         return bidder.save();
       });
-      this.transitionTo('index');
+
+      this.transitionTo('all-bids');
+
     },
     createMarker(marker) {
       this.markers.push(marker);

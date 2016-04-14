@@ -1,9 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  marker: {
-
-  },
+  marker: {},
   categoryShow: false,
   showNewBidForm: false,
   actions: {
@@ -14,7 +12,13 @@ export default Ember.Component.extend({
       this.set('showNewBidForm', true);
     },
     postBid() {
-      var marker = this.marker;
+      // var marker = this.marker;
+      var markerParams = {
+        lat: this.marker.lat,
+        lng: this.marker.lng,
+        draggable: false,
+        cursor: "pointer"
+      };
       var params = {
         category: this.get('category'),
         title: this.get('title'),
@@ -28,14 +32,14 @@ export default Ember.Component.extend({
         latitude: this.marker.lat,
         longitude: this.marker.lng
       };
-      console.log(marker);
-      this.sendAction('postBid', params);
+      // console.log(marker);
+      this.sendAction('postBid', params, markerParams);
       this.set('categoryShow', false);
       this.set('showNewBidForm', false);
     },
     createMarker(marker) {
       this.set('marker', marker);
-      console.log("here is marker", this.marker);
+      console.log("you made a marker", this.marker);
       // this.sendAction('createMarker', marker);
     }
   }
