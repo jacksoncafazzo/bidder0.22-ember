@@ -1,21 +1,23 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  markers: [],
+  // markers: [],
   model() {
     var bids = this.store.query('bid', {
       orderBy: 'active',
       equalTo: true
     });
 
-    var postedMarkers = this.store.findAll('marker');
-    console.log(postedMarkers);
-    postedMarkers.forEach(function(marker) {
-      this.markers.push(marker);
-    });
-    return Ember.RSVP.hash({
-      postedMarkers: postedMarkers,
-      bids: bids
+    return this.store.findAll('marker').then(function(markers) {
+      // console.log("I'm here" , markers);
+      var markersList = [];
+      markers.forEach(function(marker) {
+        markersList.push(marker);
+      });
+      return Ember.RSVP.hash({
+        postedMarkers: markersList,
+        bids: bids
+      });
     });
   },
   actions: {

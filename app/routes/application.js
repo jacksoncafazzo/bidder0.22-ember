@@ -11,11 +11,15 @@ export default Ember.Route.extend({
     });
     return user;
   },
-  getBidder(uid) {
+  getBidder(user) {
     var bidder = this.store.query('bidder', {
-      orderBy: 'uid',
-      equalTo: uid
+      orderBy: 'user',
+      equalTo: user.id,
+      startAt: 0,
+      endAt: 1
+
     });
+    console.log(bidder);
     return bidder;
   },
   beforeModel(){
@@ -27,8 +31,8 @@ export default Ember.Route.extend({
     var user = this.getUser(uid);
 
     // console.log(this.get('user'));
-    var bidder = this.getBidder(user.bidder_id);
-    // console.log(bidder);
+    var bidder = this.getBidder(user);
+    // console.log("bidders", bidder);
     return Ember.RSVP.hash({
       user: user,
       bidder: bidder
