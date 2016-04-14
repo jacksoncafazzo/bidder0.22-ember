@@ -29,6 +29,19 @@ html, body {
   height: 400px;
 }
 
+.single-bid {
+  .single-bidmap {
+    width: 400px;
+    height: 300px;
+  }
+  .map-circle {
+    align-self: right;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+  }
+}
+
 
 .inactive {
   color: red;

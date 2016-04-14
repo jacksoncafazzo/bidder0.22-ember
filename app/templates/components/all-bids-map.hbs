@@ -1,13 +1,14 @@
-<div class="container">
+<div class="container all-bids">
   {{#each bids as |bid|}}
     {{bid.title}}
   {{/each}}
-  {{#each placedMarkers as |marker|}}
+  {{#each postedMarkers as |marker|}}
     {{marker.lat}}
   {{/each}}
   {{#if refresh}}
-    {{g-maps name="bidmap" click='placeMarker' lat=lat lng=lng zoom=zoom markers=markers}}
+    {{g-maps name="bidmap" click='placeMarker' lat=lat lng=lng zoom=zoom markers=postedMarkers}}
   {{/if}}
+  {{md-btn action='showMap' text='show bids'}}
   <ul>
     <li>clickLat: {{clickLat}}</li>
     <li>clickLng: {{clickLng}}</li>
@@ -17,7 +18,6 @@
       {{/each}}
     </li>
   </ul>
-  {{md-btn action='showMap' text='show bids'}}
   {{md-btn action='testFunction' text='test'}}
   {{log bids.length}}
   <a href="#" {{action 'testFunction' bids}}>cornholio</a>

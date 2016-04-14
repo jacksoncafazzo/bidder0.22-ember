@@ -23,7 +23,7 @@ export default Ember.Component.extend({
   gmap: Ember.inject.service('g-map'),
   actions: {
     testFunction() {
-      var placedMarkers = this.get('placedMarkers');
+      var placedMarkers = this.get('postedMarkers');
       console.log(placedMarkers);
       // var newMarkers = Ember.A([]);
       // placedMarkers.forEach(function(marker){
@@ -57,7 +57,12 @@ export default Ember.Component.extend({
         var marker = {
           lat: this.clickLat,
           lng: this.clickLng,
-          label: "Bid of Marvels",
+          label: "B",
+          icon: '/img/donkeykong-sm.png',
+          animation: google.maps.Animation.DROP,
+          infowindow: {
+            content: "yeaah"
+          },
           clickable: true,
           crossOnDrag: true,
           cursor: 'pointer',
@@ -65,7 +70,9 @@ export default Ember.Component.extend({
           optimized: true,
           visible: true,
           zIndex: 999,
-          click: function(event, marker) {},
+          click: function(event, marker) {
+            infowindow.open(bidmap, marker);
+          },
           rightclick: function(event, marker) {},
           dblclick: function(event, marker) {},
           mouseover: function(event, marker) {},

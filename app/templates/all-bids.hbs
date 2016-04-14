@@ -1,11 +1,13 @@
-{{#each model.bids as |bid|}}
-  {{bid-tile bid=bid}}
-{{/each}}
-<ul>
+<div class="container">
+  {{#each model.bids as |bid|}}
+    {{bid-tile bid=bid}}
+  {{/each}}
 
-{{#each model.postedMarkers as |marker|}}
+<ul>
+  {{#each model.postedMarkers as |marker|}}
   <li>marker lat: {{marker.lat}}</li>
   <li>marker lng: {{marker.lng}}</li>
 {{/each}}
 </ul>
+</div>
 {{all-bids-map bids=model.bids postedMarkers=model.postedMarkers}}
