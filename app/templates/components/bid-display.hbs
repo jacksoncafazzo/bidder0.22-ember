@@ -1,35 +1,51 @@
 
 
-
-
+<div class="row header-discription">
+  <div class="col s12">
+    <h1>Bid Description</h1>
+  </div>
+</div>
   <div class="row bid-description">
 
-    <!-- <div class="padding"> -->
-      <div class="col s6 padding">
-        <h5>{{bid.title}}</h5>
-        <h6>Bid Value: ${{bid.payment}}</h6>
-        <h6>Location: {{bid.location}}</h6>
-        <h6>Description: {{bid.description}}</h6>
-        <h6>Start Date: {{bid.jobStart}}</h6>
-        <h6>End Date: {{bid.jobEnd}}</h6>
-        <h6>Active: {{bid.active}}</h6>
-        {{#if bid.providing}}
-        <h6>I am providing this service</h6>
-        {{else}}
-        <h6>I am seeking this service</h6>
-        {{/if}}
-        <h6>Bid Posted: {{moment-from-now bid.date}}</h6>
-        {{#if bid.active}}
-        <a {{action 'deactivateBid' bid}} class="btn">deactivate</a>
-        {{else}}
-        <a {{action 'activateBid' bid}} class="btn">Activate</a>
-        {{/if}}
-        {{log bid.marker.lat}}
+      <div class="column-wrap">
+        <div class="col s6 inner-col">
+          <div class="box-1">
+            <div class="nome padding">
+
+              <h5>{{bid.title}}</h5>
+              <h6>Bid Value: ${{bid.payment}}</h6>
+              <h6>Location: {{bid.location}}</h6>
+              <h6>Description: {{bid.description}}</h6>
+              <h6>Start Date: {{bid.jobStart}}</h6>
+              <h6>End Date: {{bid.jobEnd}}</h6>
+              <h6>Active: {{bid.active}}</h6>
+              {{#if bid.providing}}
+              <h6>I am providing this service</h6>
+              {{else}}
+              <h6>I am seeking this service</h6>
+              {{/if}}
+              <h6>Bid Posted: {{moment-from-now bid.date}}</h6>
+              {{#if bid.active}}
+              <a {{action 'deactivateBid' bid}} class="btn">deactivate</a>
+              {{else}}
+              <a {{action 'activateBid' bid}} class="btn">Activate</a>
+              {{/if}}
+              {{log bid.marker.lat}}
+            </div>
+          </div>
+        </div>
+        <div class="col s6 inner-col">
+          <div class="box-2">
+            <div class="single-bidmap">
+              {{g-maps name="single-bidmap" click='placeMarker' lat=bid.latitude lng=bid.longitude zoom=15 marker=marker}}
+            </div>
+          </div>
+        </div>
       </div>
-    <!-- </div> -->
-    <div class="col s6 single-bid">
-      <div class="single-bidmap">
-        {{g-maps name="single-bidmap" click='placeMarker' lat=bid.latitude lng=bid.longitude zoom=15 marker=marker}}
-      </div>
-    </div>
-  </div>
+
+</div>
+
+<footer class="footer-display footer-lower">
+  <p class="foot-padding">Bidder was created at <span>Epicodus</span> by Jackson Cafazzo, Jordan Meier, Daren Schaad, Lindsey Raffa, Brooke Hurford, Jessica Fix, and Taylor Pokoj.</p>
+  <p>Bidder | All Rights Reserved | Copyright 2016</p>
+</footer>
