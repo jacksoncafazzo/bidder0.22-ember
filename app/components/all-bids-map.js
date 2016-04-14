@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-
   clickLat: 0,
   clickLng: 0,
   lat: 45.52982577726017,
@@ -20,16 +19,19 @@ export default Ember.Component.extend({
   showMap: false,
   gmap: Ember.inject.service('g-map'),
   actions: {
-    testFunction() {
-      this.get('bids').forEach(function(bid) {
+    testFunction(bids) {
+      bids.forEach(function(bid) {
+        bid = this.get(bid);
+        console.log(bid.latitude);
+        // console.log(this.get('clickLat'));
         var marker = {
           lat: bid.latitude,
           lng: bid.longitude,
         };
-        console.log(marker);
+        // console.log(marker);
         // this.markers.pushObject(marker)
       });
-      console.log("these are bids length", this.get('bids'));
+      console.log("these are bids length", (this.get('bids')));
     },
     showMap() {
       this.set('showMap', true);

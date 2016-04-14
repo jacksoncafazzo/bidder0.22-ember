@@ -1,4 +1,6 @@
-<!-- {{log bids}} -->
-{{g-maps name="bidmap" click='placeMarker' lat=lat lng=lng zoom=zoom markers=markers}}
-{{log bids.length}}
-{{md-btn action='testFunction' text='butthole'}}
+<div class="container">
+  {{g-maps name="bidmap" click='placeMarker' lat=lat lng=lng zoom=zoom markers=markers}}
+  {{log bids.length}}
+  <a href="#" {{action 'testFunction' bids}}>cornholio</a>
+  {{md-btn action='testFunction' text='butthole' bids=bids}}
+</div>

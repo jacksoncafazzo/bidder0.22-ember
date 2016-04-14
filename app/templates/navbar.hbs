@@ -1,4 +1,4 @@
-<div class="navbar-fixed">  
+<div class="navbar-fixed">
 {{#md-navbar name='BIDDER'}}
   {{#unless session.isAuthenticated}}
   <li>
@@ -6,6 +6,7 @@
   </li>
   {{else}}
   {{#each model.bidder as |bidder|}}
+  <li><a href="all-bids">All Bids</a></li>
   {{#link-to 'bidder' bidder.id tagName='li' class='topLink'}}
   <li><a href="#" {{action 'logout' }}>logout</a></li>
   <li>
