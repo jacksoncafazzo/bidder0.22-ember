@@ -1,8 +1,5 @@
+<div class="navbar-fixed">  
 {{#md-navbar name='BIDDER'}}
-  <!-- {{#link-to 'index' tagName='li' class='topLink'}}
-    Bidder
-  {{/link-to}} -->
-
   {{#unless session.isAuthenticated}}
   <li>
     <a href="#" {{action 'login' }}>login</a>
@@ -18,10 +15,10 @@
         {{session.currentUser.username}}
       </a>
     </div>
-
   </li>
   <li><a href="#">Profile</a></li>
   {{/link-to}}
   {{/each}}
-  {{/unless}}
-  {{/md-navbar}}
+{{/unless}}
+{{/md-navbar}}
+</div>
