@@ -1,35 +1,40 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-
   clickLat: 0,
   clickLng: 0,
   lat: 45.52982577726017,
   lng: -122.69130210876466,
-  zoom: 15,
+  zoom: 14,
   mapCanvas: {},
-  // placedMarker: Ember.computed('markers', function() {
-  //   return this.get.indexOf('markers', 0);
+  // placedMarkers: Ember.computed('markers', function(markers) {
+  //   console.log(this.get('markers'));
+  //   this.set('markers', markers);
+  //   return markers;
   // }),
   markers: Ember.A([
     {
       lat: 42,
-      lng: -122
+      lng: -122,
+
     }
   ]),
   showMap: false,
   gmap: Ember.inject.service('g-map'),
   actions: {
-    testFunction() {
-      this.get('bids').forEach(function(bid) {
+    testFunction(bids) {
+      bids.forEach(function(bid) {
+        bid = this.get(bid);
+        console.log(bid.latitude);
+        // console.log(this.get('clickLat'));
         var marker = {
           lat: bid.latitude,
           lng: bid.longitude,
         };
-        console.log(marker);
+        // console.log(marker);
         // this.markers.pushObject(marker)
       });
-      console.log("these are bids length", this.get('bids'));
+      console.log("these are bids length", (this.get('bids')));
     },
     showMap() {
       this.set('showMap', true);
@@ -61,9 +66,8 @@ export default Ember.Component.extend({
           dragend: function(event, marker) {},
 
         };
-
+        console.log(this.get('markers'));
         this.markers.addObject(marker);
-        this.sendAction('createMarker', marker);
       }
     },
 });

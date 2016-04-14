@@ -11,9 +11,9 @@ export default DS.Model.extend({
   jobStart: DS.attr(),
   jobEnd: DS.attr(),
   active: DS.attr('boolean', {defaultValue() {return true;} }),
-  // marker: DS.attr(),
   latitude: DS.attr(),
   longitude: DS.attr(),
+  marker: DS.belongsTo('marker', { async: true }),
   bidder: DS.belongsTo('bidder', { async: true }),
   // user: DS.belongsTo('user', { async: true })
   // jobbers: DS.hasMany('jobbers', { async: true })
