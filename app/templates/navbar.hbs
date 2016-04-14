@@ -10,9 +10,6 @@
   {{else}}
   {{#each model.bidder as |bidder|}}
   {{#link-to 'bidder' bidder.id tagName='li' class='topLink'}}
-  <li><a href="#">Profile</a></li>
-  {{/link-to}}
-  {{/each}}
   <li><a href="#" {{action 'logout' }}>logout</a></li>
   <li>
     <div class="chip">
@@ -23,5 +20,8 @@
     </div>
 
   </li>
+  <li><a href="#">Profile</a></li>
+  {{/link-to}}
+  {{/each}}
   {{/unless}}
   {{/md-navbar}}
