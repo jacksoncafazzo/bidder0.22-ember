@@ -7,17 +7,7 @@ export default Ember.Component.extend({
   lng: -122.69130210876466,
   zoom: 14,
   mapCanvas: {},
-  allMarkers: Ember.A([
-    {
-      lat: 42,
-      lng: -122,
-
-    },
-    {
-      lat: 45,
-      lng: -122
-    }
-  ]),
+  allMarkers: Ember.A([]),
   showMap: false,
   gmap: Ember.inject.service('g-map'),
   init() {
@@ -33,7 +23,8 @@ export default Ember.Component.extend({
         // icon: '/img/donkeykong-sm.png',
         // animation: google.maps.Animation.DROP,
         // infowindow: {
-        //   content: "yeaah"
+        //   content: "<p>yeaah</p>",
+        //   visible: true
         // },
         // clickable: true,
         // crossOnDrag: true,
@@ -43,7 +34,7 @@ export default Ember.Component.extend({
         // visible: true,
         // zIndex: 999,
         // click: function(event, marker) {
-        //   infowindow.open(bidmap, marker);
+        //   this.infowindow.open(bidmap, marker);
         // },
         // rightclick: function(event, marker) {},
         // dblclick: function(event, marker) {},
