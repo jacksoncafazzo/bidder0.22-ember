@@ -6,7 +6,7 @@ export default Ember.Route.extend({
 
   ],
   model(params) {
-      return this.store.findRecord('bidder', params.bidder_id)
+      return this.store.findRecord('bidder', params.bidder_id);
   },
   actions: {
     postBid(params) {
