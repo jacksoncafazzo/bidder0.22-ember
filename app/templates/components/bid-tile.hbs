@@ -5,32 +5,7 @@
     <h6>Bid Value: ${{bid.payment}}</h6>
     <h6>Posted: {{moment-format bid.date}}</h6>
 
-    {{#md-card-collapsible }}
-    {{#md-collapsible icon="mdi-image-filter-drama"
-        title="One"}}
-        <h6>Title: {{bid.title}}</h6>
-        <h6>Bid Value: ${{bid.payment}}</h6>
-        <h6>Posted: {{moment-format bid.date}}</h6>
-    {{/md-collapsible}}
-    {{#md-collapsible icon="mdi-maps-place"
-        title="Two"}}
 
-        Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut
-        aliquip ex ea commodo consequat.
-    {{/md-collapsible}}
-    {{#md-collapsible icon="mdi-social-whatshot"
-        title="Three"}}
-
-        Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut
-        aliquip ex ea commodo consequat.
-    {{/md-collapsible}}
-{{/md-card-collapsible}}
   </div>
 {{else}}
   <div class="inactive">

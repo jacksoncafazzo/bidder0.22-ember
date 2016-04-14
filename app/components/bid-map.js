@@ -13,9 +13,7 @@ export default Ember.Component.extend({
   //   this.mapCanvas.setZoom(15);
   //   this.mapCanvas.setMapTypeId(this.map.maps.MapTypeId.ROADMAP);
   // },
-  beforeModel() {
-    // this.map.maps.event.addDomListener(window, "load", this.initialize);
-  },
+
   lat: 45.52982577726017,
   lng: -122.69130210876466,
   zoom: 15,

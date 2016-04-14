@@ -1,5 +1,5 @@
 .hero {
-  min-height: 650px;
+  min-height: 550px;
 }
 
 .hero-text {
@@ -74,18 +74,18 @@ height: 30em;
   margin-bottom: 50px;
 }
 
-.hoverEffect {
-  width: 400px;
-  height: 160px;
+.hoverEffect img {
+  width: 500px;
+  height: 200px;
   margin: 0 auto;
   margin-top:50px;
   margin-bottom:50px;
 
-  -webkit-transition: all 1s ease;
-   -moz-transition: all 1s ease;
-     -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-        transition: all 1s ease;
+  -webkit-transition: all .5s ease;
+   -moz-transition: all .5s ease;
+     -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+        transition: all .5s ease;
     img {
       margin-top:50px;
       margin-bottom:50px;
@@ -94,11 +94,13 @@ height: 30em;
 
 .hoverEffect {
   img:hover {
-    border: solid 2px $primary-color;
+    border: solid 3px $primary-color;
   }
 }
 
-.wwd-statement {
+.wwd-statement{
+  max-width: 600px;
+  margin: 0 auto;
   h5 {
     color: $primary-color;
     font-weight: 300;
