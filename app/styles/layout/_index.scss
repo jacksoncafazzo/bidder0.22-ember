@@ -1,5 +1,5 @@
 .hero {
-  min-height: 550px;
+  min-height: 536px;
 }
 
 .hero-text {
@@ -79,7 +79,7 @@ height: 30em;
   height: 200px;
   margin: 0 auto;
   margin-top:60px;
-  
+
 
 
   -webkit-transition: all .5s ease;
@@ -120,4 +120,13 @@ height: 30em;
   }
   margin: 0 auto;
   text-align: center;
+}
+
+.grey-heading {
+  padding: 0;
+}
+
+.second-parallax-mid {
+  max-width: 1600px;
+  margin: 0 auto;
 }

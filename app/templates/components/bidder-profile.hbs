@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 
 <div class="hero profile-hero">
   <section class="module parallax parallax-2">
@@ -21,15 +19,3 @@
       {{#link-to 'bid' bid.id}}{{bid-tile bid=bid}}{{/link-to}}
     {{/each}}
   </div>
-=======
-<div class='page-header'>
-  <h2>{{bidder.firstName}} {{bidder.lastName}}'s Profile</h2>
-  <br>
-  <h5>Phone: {{bidder.phone}}</h5>
-  <h5>Twitter Id: {{bidder.user.uid}}</h5>
-  <h4>{{bidder.firstName}}'s Bid History</h4>
-  {{#each sortedBids as |bid|}}
-    {{#link-to 'bid' bid.id}}{{bid-tile bid=bid}}{{/link-to}}
-  {{/each}}
-</div>
->>>>>>> master
