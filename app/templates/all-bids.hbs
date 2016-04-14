@@ -3,9 +3,9 @@
 {{/each}}
 <ul>
 
-{{#each model.markers as |marker|}}
-  lat: {{marker.lat}}
-
+{{#each model.postedMarkers as |marker|}}
+  <li>marker lat: {{marker.lat}}</li>
+  <li>marker lng: {{marker.lng}}</li>
 {{/each}}
 </ul>
-{{all-bids-map bids=model.bids}}
+{{all-bids-map bids=model.bids postedMarkers=model.postedMarkers}}

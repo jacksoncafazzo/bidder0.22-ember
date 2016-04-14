@@ -8,13 +8,13 @@ export default Ember.Route.extend({
       equalTo: true
     });
 
-    var markers = this.store.findAll('marker');
-    console.log(markers);
-    markers.forEach(function(marker) {
+    var postedMarkers = this.store.findAll('marker');
+    console.log(postedMarkers);
+    postedMarkers.forEach(function(marker) {
       this.markers.push(marker);
     });
     return Ember.RSVP.hash({
-      markers: markers,
+      postedMarkers: postedMarkers,
       bids: bids
     });
   },
