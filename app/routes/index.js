@@ -1,11 +1,14 @@
 import Ember from 'ember';
 
-// const {RSVP: {Promise}} = Ember;
+const { get } = Ember;
 
 export default Ember.Route.extend({
+  // beforeModel(){
+  //   return get(this,'session').fetch().catch(function(){});
+  // },
   model() {
     var uid = this.get('session.uid');
-    // console.log(uid);
+    console.log(uid);
 
     return Ember.RSVP.hash({
       bidders: this.store.query('bidder', {
