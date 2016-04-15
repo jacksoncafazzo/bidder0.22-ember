@@ -2,7 +2,7 @@
 
 {{#if session.isAuthenticated}}
   {{new-profile saveProfile="saveProfile"}}
-{{#link-to 'all-bids'}}About{{/link-to}}
+
 
       <!-- <h5>Thanks for authorizing</h5>
 
@@ -29,14 +29,14 @@
   {{md-parallax image="/img/laundry-bg.png" class="parallax-img2"}}
     <div class="section grey lighten-2">
       <div class="row setWidth">
-        <div class="col s6">
+        <div class="col m6 s12">
           <div class="imageLink1 hoverEffect">
-            <a href="#">  <img src="/img/post-a-bid.png" alt="post a bid image link"/></a>
+            <a href="#"> <img src="/img/post-a-bid.png" alt="post a bid image link"/></a>
           </div>
         </div>
-        <div class="col s6">
+        <div class="col m6 s12">
           <div class="imageLink2 hoverEffect">
-            <a href="#">  <img src="/img/offer-services-blue.png" alt="offer skills image link" /></a>
+            <a href="#"> <img src="/img/offer-services-blue.png" alt="offer skills image link" /></a>
           </div>
         </div>
       </div>
@@ -92,7 +92,7 @@
     </div>
     <div class="col s4">
       <p>ABOUT US</p>
-      <p class="contact">link</p>
+      <p class="contact">{{#link-to 'about'}}About{{/link-to}}</p>
     </div>
   </div>
   <footer class="footer-lower">
@@ -164,7 +164,7 @@
     </div>
     <div class="col s4">
       <p>ABOUT US</p>
-      <p class="contact">link</p>
+      {{#link-to 'about'}}Read{{/link-to}}
     </div>
 
   </div>
