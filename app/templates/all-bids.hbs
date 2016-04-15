@@ -1,6 +1,21 @@
+
+<div class="all-bids-wrapper">
+
+
+
 <div class="container">
+  <div class="all-bid-title">
+    <!-- <h1>{{bidder.firstName}}'s Bids</h1> -->
+    <h1>MY BIDS</h1>
+  </div>
   {{#each model.bids as |bid|}}
     {{bid-tile bid=bid}}
   {{/each}}
 </div>
 {{all-bids-map bids=model.bids postedMarkers=model.postedMarkers}}
+</div>
+
+<footer class="footer-display footer-lower">
+  <p class="foot-padding">Bidder was created at <span>Epicodus</span> by Jackson Cafazzo, Jordan Meier, Daren Schaad, Lindsey Raffa, Brooke Hurford, Jessica Fix, and Taylor Pokoj.</p>
+  <p>Bidder | All Rights Reserved | Copyright 2016</p>
+</footer>
