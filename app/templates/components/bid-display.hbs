@@ -8,7 +8,7 @@
   <div class="row bid-description">
 
       <div class="column-wrap" style="height:700px;">
-        <div class="col s6 inner-col" style="margin-top:0px;">
+        <div class="col l6 m12 s12 inner-col" style="margin-top:0px;">
           <div class="box-1">
             <div class="nome padding">
 
@@ -34,11 +34,12 @@
             </div>
           </div>
         </div>
-        <div class="col s6 inner-col col-2" style="margin-top:0;">
+        <div class="col l6 m12 s12 inner-col col-2" style="margin-top:0;">
           <div class="box-2">
 
             <div class="single-bidmap">
-              {{g-maps name="single-bidmap" click='placeMarker' lat=bid.latitude lng=bid.longitude zoom=15 marker=marker}}
+              {{g-maps name="single-bidmap" scrollwheel=false
+click='placeMarker' lat=bid.latitude lng=bid.longitude zoom=15 marker=marker}}
             </div>
           </div>
         </div>
