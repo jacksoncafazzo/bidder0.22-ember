@@ -141,3 +141,11 @@ height: 30em;
     padding-top: 70px;
   }
 }
+
+.profile-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
