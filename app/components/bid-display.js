@@ -7,6 +7,34 @@ export default Ember.Component.extend({
   //     lng: this.get('bid').longitude
   //   }
   // ],
+  bidCircle: Ember.computed('bid.id', 'bid.latitude', 'bid.longitude', function() {
+    return {
+      id: this.get('bid.id'),         // Recommended
+      lat: this.get('bid.latitude'),  // Required
+      lng: this.get('bid.longitude'),        // Required
+      radius: 5000,
+      clickable: true,
+      draggable: true,
+      editable: true,
+      fillColor: '#eee',
+      fillOpacity: 0.3,
+      strokeColor: '#ddd',
+      strokeOpacity: 0.3,
+      strokePosition: google.maps.StrokePosition.CENTER, // INSIDE | OUTSIDE
+      strokeWeight: 3,
+      visible: true,
+      zIndex: 999          // Required (meters)
+    };
+  }),
+  gmap: Ember.inject.service('g-map'),
+  init() {
+    this._super();
+    var bidCircle = this.get('bidCircle');
+    console.log(bidCircle);
+    this.get('circle').push(bidCircle);
+    console.log(this.get('circle'));
+  },
+  circle: Ember.A([]),
   actions: {
     deactivateBid(bid) {
       this.sendAction('deactivateBid', bid);
