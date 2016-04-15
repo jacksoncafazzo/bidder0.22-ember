@@ -5,3 +5,64 @@
 .btn:hover {
   background-color:#ff8a80 ;
 }
+
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+/* label color */
+ .input-field label {
+   color: rga(51, 51, 51);
+ }
+ /* label focus color */
+ .input-field input[type=text]:focus + label {
+   color: #000;
+ }
+
+ /* valid color */
+ .input-field input[type=text].valid {
+   border-bottom: 1px solid $primary-color;
+   box-shadow: 0 1px 0 0 $primary-color;
+ }
+ /* invalid color */
+ .input-field input[type=text].invalid {
+   border-bottom: 1px solid #ff5252;
+   box-shadow: 0 1px 0 0 #ff5252;
+ }
+ /* icon prefix focus color */
+ .input-field .prefix.active {
+   color: #000;
+ }
+
+ .form-style {
+   width: 700px;
+   margin: 0 auto;
+   padding-top: 70px;
+
+ }
+ .form-bg {
+   background-image:
+       linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+       url('/img/form-computer.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   width: 100%;
+   height: 100vh;
+   .outer-form-bg {
+     width: 900px;
+     height: 500px;
+     background-color: rgba(255, 255, 255, .8);
+     margin: 0 auto;
+     margin-top: 70px;
+     border-radius: 20px;
+   }
+   h4 {
+     text-align: center;
+     padding-top: 60px;
+     color: $nav-bg-color;
+     text-shadow: rgb(51, 51, 51);
+   }
+ }

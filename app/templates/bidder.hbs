@@ -1,7 +1,13 @@
 
 <!-- {{log model.user.bidder}} -->
-<div class="container">
+
+<div class="container padding-map">
   {{update-profile bidder=model updateProfile="updateProfile"}}
   {{bidder-profile bidder=model}}
   {{new-bid postBid='postBid' bidder=model}}
 </div>
+
+<footer class="footer-display footer-lower">
+  <p class="foot-padding">Bidder was created at <span>Epicodus</span> by Jackson Cafazzo, Jordan Meier, Daren Schaad, Lindsey Raffa, Brooke Hurford, Jessica Fix, and Taylor Pokoj.</p>
+  <p>Bidder | All Rights Reserved | Copyright 2016</p>
+</footer>
