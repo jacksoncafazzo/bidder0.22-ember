@@ -3,9 +3,9 @@ import Ember from 'ember';
 const { get } = Ember;
 
 export default Ember.Route.extend({
-  // beforeModel(){
-  //   return get(this,'session').fetch().catch(function(){});
-  // },
+  beforeModel(){
+    return get(this,'session').fetch().catch(function(){});
+  },
   model() {
     var uid = this.get('session.uid');
     console.log(uid);
