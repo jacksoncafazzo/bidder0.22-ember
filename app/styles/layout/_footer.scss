@@ -11,6 +11,7 @@
     }
     .foot-padding {
       padding-top: 10px;
+      margin-top: 0;
     }
   }
 
@@ -25,9 +26,8 @@
   }
 
 
-    .footer-display {
-      position: sticky;
-      bottom: 0;
-      width: 100%;
-
-    }
+  .footer-display {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+  }
