@@ -15,3 +15,5 @@
 /libpeerconnection.log
 npm-debug.log
 testem.log
+public/.DS_Store
+public/img/.DS_Store

@@ -11,7 +11,10 @@ export default Ember.Component.extend({
       var params = {
         firstName: this.get('firstName'),
         lastName: this.get('lastName'),
-        phone: this.get('phone')
+        phone: this.get('phone'),
+        hood: this.get('hood'),
+        profileImgURL: this.get('profileImgURL'),
+        joined: new Date()
       };
       this.sendAction('updateProfile', bidder, params);
 

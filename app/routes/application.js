@@ -3,6 +3,7 @@ import Ember from 'ember';
 const {get} = Ember;
 
 
+
 export default Ember.Route.extend({
   getUser(uid) {
     var user = this.store.query('user', {
@@ -31,15 +32,19 @@ export default Ember.Route.extend({
   hasTwitter: false,
   actions:{
     loginTwitter(){
+      var app = this;
       get(this,'session').open('firebase', { provider: 'twitter'}).then(function(data) {
-        this.set('hasFacebook', true);
+        app.set('hasTwitter', true);
         console.log(data);
+        console.log("u has twitter", app.get('hasTwitter'));
       });
     },
     loginFacebook(){
+      var app = this;
       get(this,'session').open('firebase', { provider: 'facebook'}).then(function(data) {
-        this.set('hasTwitter', true);
+        app.set('hasFacebook', true);
         console.log(data);
+        console.log("u has facebook", app.get('hasFacebook'));
       });
     },
     logout(){
