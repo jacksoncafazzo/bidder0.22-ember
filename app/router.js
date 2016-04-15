@@ -11,6 +11,7 @@ Router.map(function() {
   this.authenticatedRoute('bidder', {path: '/bidder/:bidder_id'});
   this.authenticatedRoute('bid', {path: '/bid/:bid_id'});
   this.route('all-bids');
+  this.route('about');
 });
 
 export default Router;
