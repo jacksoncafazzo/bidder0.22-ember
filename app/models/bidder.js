@@ -5,7 +5,9 @@ export default DS.Model.extend({
   lastName: DS.attr(),
   phone: DS.attr(),
   uid: DS.attr(),
-  // email: DS.attr(),
+  hood: DS.attr(),
+  profileImgURL: DS.attr(),
+  joined: DS.attr(),
   user: DS.belongsTo('user', { async: true }),
   bids: DS.hasMany('bids', { async: true })
 });
