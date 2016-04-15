@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   clickLng: 0,
   lat: 45.52982577726017,
   lng: -122.69130210876466,
-  zoom: 14,
+  zoom: 12,
   mapCanvas: {},
   allMarkers: Ember.A([]),
   showMap: false,
