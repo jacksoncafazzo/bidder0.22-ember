@@ -16,6 +16,6 @@
     <h5>Twitter Id: {{bidder.user.uid}}</h5>
     <h4>{{bidder.firstName}}'s Bid History</h4>
     {{#each sortedBids as |bid|}}
-      {{#link-to 'bid' bid.id}}{{bid-tile bid=bid}}{{/link-to}}
+      {{bid-tile bid=bid}}
     {{/each}}
   </div>
