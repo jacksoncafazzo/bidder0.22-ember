@@ -5,7 +5,7 @@ export default DS.Model.extend({
   category: DS.attr(),
   title: DS.attr(),
   location: DS.attr(),
-  payment: DS.attr('number'),
+  payment: DS.attr(),
   providing: DS.attr('boolean'),
   description: DS.attr(),
   jobStart: DS.attr(),

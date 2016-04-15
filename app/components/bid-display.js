@@ -31,10 +31,10 @@ export default Ember.Component.extend({
     this._super();
     var bidCircle = this.get('bidCircle');
     console.log(bidCircle);
-    this.get('circle').push(bidCircle);
-    console.log(this.get('circle'));
+    this.get('circles').push(bidCircle);
+    console.log(this.get('circles'));
   },
-  circle: Ember.A([]),
+  circles: Ember.A([]),
   actions: {
     deactivateBid(bid) {
       this.sendAction('deactivateBid', bid);
