@@ -21,7 +21,7 @@ export default Ember.Component.extend({
       return bid;
     });
 
-    var postedMarkers = this.get('postedMarkers');
+    // var postedMarkers = this.get('postedMarkers');
 
     for (var i = 0; i< myMarkers.get('length'); i++) {
       var marker = {
