@@ -7,85 +7,46 @@ export default Ember.Component.extend({
   lng: -122.69130210876466,
   zoom: 14,
   mapCanvas: {},
-  // placedMarkers: Ember.computed('markers', function(markers) {
-  //   console.log(this.get('markers'));
-  //   this.set('markers', markers);
-  //   return markers;
-  // }),
-  markers: Ember.A([
-    {
-      lat: 42,
-      lng: -122,
-
-    }
-  ]),
+  allMarkers: Ember.A([]),
   showMap: false,
   gmap: Ember.inject.service('g-map'),
-  actions: {
-    testFunction() {
-      var placedMarkers = this.get('postedMarkers');
-      console.log(placedMarkers);
-      // var newMarkers = Ember.A([]);
-      // placedMarkers.forEach(function(marker){
-      //   console.log(marker.lat);
-      //   var newMarker = {
-      //     lat: marker.lat,
-      //     lng: marker.lng
-      //   };
-      //   newMarkers.push(newMarker);
-      // }, this);
-      // bids.forEach(function(bid) {
-      //   bid = this.get(bid);
-      //   console.log(bid.latitude);
-      //   // console.log(this.get('clickLat'));
-      //   var marker = {
-      //     lat: bid.latitude,
-      //     lng: bid.longitude,
-      //   };
-      //   // console.log(marker);
-      //   // this.markers.pushObject(marker)
-      // });
-      console.log("these are bids", (this.get('bids')));
-    },
-    showMap() {
-      this.toggleProperty('refresh');
-    },
-    placeMarker(event) {
-      // make the infowindow with bid info-- we made it already. user chooses what bid to add to the infowindow?
-        this.set('clickLat', event.latLng.lat());
-        this.set('clickLng', event.latLng.lng());
-        var marker = {
-          lat: this.clickLat,
-          lng: this.clickLng,
-          label: "B",
-          icon: '/img/donkeykong-sm.png',
-          animation: google.maps.Animation.DROP,
-          infowindow: {
-            content: "yeaah"
+  init() {
+    this._super();
+    var myMarkers = this.get('postedMarkers').map(function(marker) {
+      return marker;
+    });
+
+    var myBids = this.get('bids').map(function(bid) {
+      return bid;
+    });
+
+    var postedMarkers = this.get('postedMarkers');
+
+    for (var i = 0; i< myMarkers.get('length'); i++) {
+      var marker = {
+        lat: myMarkers[i].get('lat'),
+        lng: myMarkers[i].get('lng'),
+        infoWindow: {
+            content: '<p>' + myMarkers[i].get("bid.title") + '</p>',
+            visible: true
           },
-          clickable: true,
-          crossOnDrag: true,
-          cursor: 'pointer',
-          draggable: true,
-          optimized: true,
-          visible: true,
-          zIndex: 999,
-          click: function(event, marker) {
-            infowindow.open(bidmap, marker);
-          },
+          click: function(event, marker) {},
           rightclick: function(event, marker) {},
           dblclick: function(event, marker) {},
           mouseover: function(event, marker) {},
           mouseout: function(event, marker) {},
           mouseup: function(event, marker) {},
           mousedown: function(event, marker) {},
-          drag: function(event, marker) {},
-          dragstart: function(event, marker) {},
-          dragend: function(event, marker) {},
-
-        };
-        console.log(this.get('markers'));
-        this.markers.addObject(marker);
-      }
+          drag: function(e, marker) {},
+          dragstart: function(e, marker) {},
+          dragend: function(e, marker) {}
+      };
+      this.get('allMarkers').push(marker);
+    };
+  },
+  actions: {
+    showMap() {
+      this.toggleProperty('refresh');
     },
+  },
 });

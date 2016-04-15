@@ -9,12 +9,14 @@ export default Ember.Route.extend({
       orderBy: 'uid',
       equalTo: uid,
     });
+    console.log("first user", user);
     return user;
   },
   getBidder(user) {
     var bidder = this.store.query('bidder', {
-      orderBy: 'user',
-      equalTo: user.id,
+
+      orderBy: 'uid',
+      equalTo: user.uid,
       startAt: 0,
       endAt: 1
 
@@ -25,19 +27,7 @@ export default Ember.Route.extend({
   beforeModel(){
     return get(this,'session').fetch().catch(function(){});
   },
-  model() {
-    var uid = this.get('session.uid');
-    // var uid = this.get('session.uid');
-    var user = this.getUser(uid);
 
-    // console.log(this.get('user'));
-    var bidder = this.getBidder(user);
-    // console.log("bidders", bidder);
-    return Ember.RSVP.hash({
-      user: user,
-      bidder: bidder
-    });
-  },
   actions:{
     login(){
       get(this,'session').open('firebase', { provider: 'twitter'}).then(function(data) {

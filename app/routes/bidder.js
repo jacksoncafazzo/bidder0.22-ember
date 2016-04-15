@@ -9,6 +9,18 @@ export default Ember.Route.extend({
       return this.store.findRecord('bidder', params.bidder_id);
   },
   actions: {
+
+    updateProfile(bidder, params) {
+      Object.keys(params).forEach(function(key) {
+        if(params[key]!==undefined) {
+          bidder.set(key,params[key]);
+        }
+      });
+      bidder.save();
+      console.log(params);
+      this.transitionTo('bidder', bidder);
+
+    },
     postBid(params, markerParams) {
       var marker = this.store.createRecord('marker', markerParams);
       marker.save();

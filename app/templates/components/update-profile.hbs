@@ -1,6 +1,13 @@
 {{#if showUpdateProfile}}
-{{md-input value=firstName label="First Name" class="col s4 validate=true"}}
-{{md-btn action="showUpdateProfile" text="show update profile"}}
+
+{{log bidder}}
+<form>
+  {{md-input value=firstName label=bidder.firstName class="col s4 validate=true"}}
+  {{md-input value=lastName label=bidder.lastName class="col s4 validate=true"}}
+  {{md-input value=phone label=bidder.phone class="col s4 validate=true" type="number"}}
+  <a class='btn' {{action 'updateProfile' bidder}}>Update</a>
+</form>
 {{else}}
-{{md-btn action="showUpdateProfile" text="show update profile"}}
+{{md-btn action="showUpdateProfile" text="show update form"}}
+
 {{/if}}
