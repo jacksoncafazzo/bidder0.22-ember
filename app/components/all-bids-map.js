@@ -9,6 +9,7 @@ export default Ember.Component.extend({
   mapCanvas: {},
   allMarkers: Ember.A([]),
   showMap: false,
+
   gmap: Ember.inject.service('g-map'),
   init() {
     this._super();
@@ -26,6 +27,8 @@ export default Ember.Component.extend({
       var marker = {
         lat: myMarkers[i].get('lat'),
         lng: myMarkers[i].get('lng'),
+        icon: '/img/bid-icon-new.png',
+        animation: google.maps.Animation.DROP,
         infoWindow: {
             content: '<p>' + myMarkers[i].get("bid.title") + '</p>',
             visible: true
@@ -43,6 +46,7 @@ export default Ember.Component.extend({
       };
       this.get('allMarkers').push(marker);
     };
+    this.set('zoom', 10);
   },
   actions: {
     showMap() {
