@@ -16,7 +16,7 @@ export default Ember.Component.extend({
 
   lat: 45.52982577726017,
   lng: -122.69130210876466,
-  zoom: 15,
+  zoom: 14,
   mapCanvas: {},
   placedMarker: Ember.computed('markers', function() {
     return this.get.indexOf('markers', 0);

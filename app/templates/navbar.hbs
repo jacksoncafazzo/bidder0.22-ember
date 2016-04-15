@@ -18,13 +18,6 @@
 
 {{else}}
   <li><a href="all-bids">VIEW ALL BIDS</a></li>
-
-  {{#each model as |bidder|}}
-  {{#link-to 'bidder' bidder.id tagName='li' class='topLink'}}
-  <li><a href="#">PROFILE</a></li>
-  {{/link-to}}
-  {{/each}}
-  {{log session.currentUser}}
   <li>
     <div class="chip">
       <a href='http://facebook.com/{{session.currentUser.username}}' target='_blank' class="profile">
