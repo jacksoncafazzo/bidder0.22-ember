@@ -1,10 +1,6 @@
 {{g-maps name="bidmap" click='placeMarker' lat=lat lng=lng zoom=zoom markers=markers}}
-{{clickLat}}
-{{clickLng}}
 {{#if showMap}}
 {{md-input value=lat}}
 {{md-input value=lng}}
 {{md-input value=zoom}}
-{{else}}
-{{md-btn action='showMap' text="do things"}}
 {{/if}}
