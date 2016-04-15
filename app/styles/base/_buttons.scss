@@ -13,6 +13,11 @@
   box-shadow: 0 1px 0 0 #000;
 }
 
+.input-field input[type=number]:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+
 /* label color */
  .input-field label {
    color: rga(51, 51, 51);
