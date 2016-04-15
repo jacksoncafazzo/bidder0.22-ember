@@ -1,31 +1,32 @@
 <div class="navbar-fixed">
 {{#md-navbar name='BIDDER'}}
-  {{#unless session.isAuthenticated}}
+
+{{#unless session.isAuthenticated}}
   <li>
     <a href="sign-in">sign in with an email address</a>
   </li>
   <li>
-    <a href='#' {{action 'login'}}>
+    <a href='#' {{action 'loginFacebook'}}>
+      <img src='/img/facebooklogin.png' alt='sign in facebook'/>
+    </a>
+  </li>
+  <li>
+    <a href='#' {{action 'loginTwitter'}}>
       <img src='https://g.twimg.com/dev/sites/default/files/images_documentation/sign-in-with-twitter-gray.png' alt='sign in twitter'/>
     </a>
   </li>
 
-  {{else}}
-  {{#each model.bidder as |bidder|}}
+{{else}}
   <li><a href="all-bids">VIEW ALL BIDS</a></li>
-  {{#link-to 'bidder' bidder.id tagName='li' class='topLink'}}
-  <li><a href="#">PROFILE</a></li>
   <li>
     <div class="chip">
-      <a href='http://twitter.com/{{session.currentUser.username}}' target='_blank' class="profile">
+      <a href='http://facebook.com/{{session.currentUser.username}}' target='_blank' class="profile">
         <img src='{{session.currentUser.profileImageURL}}' height='50px' width='50px' alt='contact photo'/>
-        {{session.currentUser.username}}
+        {{session.currentUser.displayName}}
       </a>
     </div>
   </li>
   <li><a href="#" {{action 'logout' }}>LOGOUT</a></li>
-  {{/link-to}}
-  {{/each}}
 {{/unless}}
 {{/md-navbar}}
 </div>

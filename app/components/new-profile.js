@@ -4,6 +4,7 @@ export default Ember.Component.extend({
   // model(params) {
   //   return this.store('bidder', params.bidder_id);
   // },
+  
   actions: {
     saveProfile() {
       var params = {

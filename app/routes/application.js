@@ -27,10 +27,18 @@ export default Ember.Route.extend({
   beforeModel(){
     return get(this,'session').fetch().catch(function(){});
   },
-
+  hasFacebook: false,
+  hasTwitter: false,
   actions:{
-    login(){
+    loginTwitter(){
       get(this,'session').open('firebase', { provider: 'twitter'}).then(function(data) {
+        this.set('hasFacebook', true);
+        console.log(data);
+      });
+    },
+    loginFacebook(){
+      get(this,'session').open('firebase', { provider: 'facebook'}).then(function(data) {
+        this.set('hasTwitter', true);
         console.log(data);
       });
     },
