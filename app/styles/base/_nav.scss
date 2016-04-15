@@ -18,17 +18,10 @@
 
   }
   a:hover {
-    background-color: $primary-color;
+    color: rgba(0, 0, 0, 0.4);;
     border-radius: 15px;
-
-    color: white;
-
+    text-shadow: 1px 1px rgba(51, 51, 51, 0.7);
   }
-}
-
-
-.topLink {
-
 }
 
 .login {
