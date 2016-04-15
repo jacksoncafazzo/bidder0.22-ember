@@ -1,18 +1,14 @@
 
 <div class="all-bids-wrapper">
-
-
-
-<div class="container">
-  <div class="all-bid-title">
-    <!-- <h1>{{bidder.firstName}}'s Bids</h1> -->
-    <h1>ALL BIDS</h1>
+  <div class="container">
+    <div class="all-bid-title">
+      <h1>ALL BIDS</h1>
+    </div>
+    {{#each model.bids as |bid|}}
+      {{bid-tile bid=bid}}
+    {{/each}}
   </div>
-  {{#each model.bids as |bid|}}
-    {{bid-tile bid=bid}}
-  {{/each}}
-</div>
-{{all-bids-map bids=model.bids postedMarkers=model.postedMarkers}}
+  {{all-bids-map bids=model.bids postedMarkers=model.postedMarkers}}
 </div>
 
 <footer class="footer-display footer-all footer-lower">

@@ -1,9 +1,15 @@
 .nav-wrapper {
   background-color: $nav-bg-color;
+
   .brand-logo {
     color: $primary-color;
     font-family: $nav-font;
+    background-color: $nav-bg-color;
   }
+  .brand-logo:hover {
+    background-color: $nav-bg-color;
+  }
+
   .ember-view {
     color: $primary-color;
     font-family: $nav-font;

@@ -79,3 +79,19 @@
     text-transform: uppercase;
   }
 }
+
+
+
+.map-circle {
+  position: absolute;
+  background-color: lightblue;
+  width: 300px;
+  height: 300px;
+  right: 100px;
+  z-index: 6;
+  border-radius: 150px;
+  top: 330px;
+  opacity: 0.5;
+  border-color: blue;
+  border-width: thick;
+}
