@@ -1,4 +1,4 @@
-
+{{#if isMe}}
 <div class="hero profile-hero">
   <section class="module parallax parallax-2">
     <div class="container hero-text-profile center">
@@ -10,7 +10,6 @@
 
 <div class='page-header'>
   <h4>{{bidder.firstName}} {{bidder.lastName}}'s Profile</h4>
-
   <img src="{{bidder.profileImageURL}}" alt="user profile pic" />
   <br>
   {{bidder.hood}}
@@ -21,3 +20,6 @@
   {{bid-tile bid=bid}}
   {{/each}}
 </div>
+{{else}}
+hi leave a message
+{{/if}}

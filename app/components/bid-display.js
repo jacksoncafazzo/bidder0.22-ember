@@ -1,5 +1,7 @@
 import Ember from 'ember';
 
+const { get } = Ember;
+
 export default Ember.Component.extend({
   // markers: [
   //   {
@@ -41,6 +43,11 @@ export default Ember.Component.extend({
     },
     activateBid(bid) {
       this.sendAction('activateBid', bid);
+    },
+    contact(bidder) {
+      console.log(bidder);
+      var uid = get(bidder,'id');
+      this.transitionTo('bidder', bidder.id);
     }
   }
 });
