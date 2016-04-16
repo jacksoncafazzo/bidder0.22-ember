@@ -4,6 +4,14 @@ export default Ember.Component.extend({
   marker: {},
   categoryShow: false,
   showNewBidForm: false,
+  categories: [
+    {id: 'general', title: 'General'},
+    {id: 'yard', title: 'Yard/Garden'},
+    {id: 'tech', title: 'Technology'},
+    {id: 'house', title: 'Household'},
+    {id: 'animals', title: 'Animals'},
+    {id: 'education', title: 'Education'},
+  ],
   actions: {
     showCategories() {
       this.toggleProperty('categoryShow');

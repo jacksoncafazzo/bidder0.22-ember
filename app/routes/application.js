@@ -24,10 +24,10 @@ export default Ember.Route.extend({
     console.log(bidder);
     return bidder;
   },
-  beforeModel(){
-    return get(this,'session').fetch().catch(function(){
-    });
-  },
+  // beforeModel(){
+  //   return get(this,'session').fetch().catch(function(){
+  //   });
+  // },
 
   hasFacebook: false,
   hasTwitter: false,

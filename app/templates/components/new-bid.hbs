@@ -2,8 +2,11 @@
   <div class='panel panel-default'>
       <div class='panel-heading'><h5>Create a bid, yo</h5>
         <form>
-          {{#if categoryShow}}
           Categories:
+          {{md-tabs
+            content=categories
+            selected=category}}
+          <!-- {{#if categoryShow}}
             {{#md-radios
               selection=category
               optionValuePath='id'
@@ -15,7 +18,7 @@
               <p>{{md-radio value='animals' name="Animals"}}</p>
               <p>{{md-radio value='education' name="Education"}}</p>
             {{/md-radios}}
-          {{/if}}
+          {{/if}} -->
           {{md-btn action='showCategories' text='Categories'}}
           <br>
           <br>
