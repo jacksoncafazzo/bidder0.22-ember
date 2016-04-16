@@ -31,5 +31,9 @@ export default Ember.Component.extend({
   },
   sortBy: ['date:desc'],
   sortedBids: Ember.computed.sort('bidder.bids', 'sortBy'),
-
+  actions: {
+    updateProfile(bidder, params) {
+      this.sendAction('updateProfile', bidder, params);
+    }
+  }
 });

@@ -1,9 +1,16 @@
 {{#if isMe}}
+{{update-profile bidder=bidder updateProfile="updateProfile"}}
+{{new-bid postBid='postBid' bidder=model}}
 <div class="hero profile-hero">
   <section class="module parallax parallax-2">
     <div class="container hero-text-profile center">
-      <h1>Welcome {{bidder.firstName}} {{bidder.lastName}}</h1>
-      <h2>Post a Bid</h2>
+      <div class='page-header'>
+        <h4>{{bidder.firstName}} {{bidder.lastName}}'s Profile</h4>
+
+        <h5>{{bidder.hood}}</h5>
+        <h5>Phone: {{bidder.phone}}</h5>
+        <h5>unique uid: {{bidder.user.uid}}</h5>
+      </div>
     </div>
   </section>
 </div>

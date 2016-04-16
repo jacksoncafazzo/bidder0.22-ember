@@ -1,8 +1,6 @@
 
 <!-- {{log model.user.bidder}} -->
 
-<div class="container padding-map">
-  {{update-profile bidder=model updateProfile="updateProfile"}}
-  {{bidder-profile bidder=model session=session}}
-  {{new-bid postBid='postBid' bidder=model}}
+<div class="container-fluid padding-map">
+  {{bidder-profile bidder=model postBid='postBid' session=session updateProfile="updateProfile"}}
 </div>

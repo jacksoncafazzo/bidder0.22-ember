@@ -1,19 +1,25 @@
 {{#if showUpdateProfile}}
-<div class="update-form">
-  <div class="innerForm">
-
-    <form>
-      {{md-input value=firstName label=bidder.firstName class="col s4 validate=true"}}
-      {{md-input value=lastName label=bidder.lastName class="col s4 validate=true"}}
-      {{md-input value=phone label=bidder.phone class="col s4 validate=true" type="number"}}
-      {{md-input value=hood label=bidder.hood class="col s4 validate=true" label="Neighborhood"}}
-      {{md-input value=profileImgURL label=bidder.profileImgURL class="col s4 validate=true" label="Profile Image URL"}}
-      <a class='btn' {{action 'updateProfile' bidder}}>Update</a>
-    </form>
+<div class="row">
+  <div class="col m2 s12 profile-btn">
+    {{md-btn action="showUpdateProfile" text="hide form"}}
+    <a class='btn waves waves-white' {{action 'updateProfile' bidder}}>Update</a>
+  </div>
+  <div class="col m10 s12">
+    <div class="update-form">
+      <div class="innerForm row">
+        <form>
+          {{md-input value=firstName label=bidder.firstName class="col m5 l4 s10 validate=true"}}
+          {{md-input value=lastName label=bidder.lastName class="col m5 l4 s10 validate=true"}}
+          {{md-input value=phone label=bidder.phone class="col m5 l4 s10 validate=true"}}
+          {{md-input value=hood label=bidder.hood class="col m5 l4 s12 validate=true" label="Neighborhood"}}
+          {{md-input value=profileImgURL label=bidder.profileImgURL class="col m10 l4 s12 validate=true" label="Profile Image URL"}}
+        </form>
+      </div>
+    </div>
   </div>
 </div>
-{{md-btn action="showUpdateProfile" text="hide update profile"}}
+
 {{else}}
-{{md-btn action="showUpdateProfile" text="show update profile"}}
+{{md-btn action="showUpdateProfile" text="update profile"}}
 
 {{/if}}
