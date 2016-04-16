@@ -8,16 +8,18 @@ export default Ember.Component.extend({
   isMe: false,
   init(){
     this._super();
-    get(this,'session').fetch().catch(session => {
-      var provider = session.provider;
+    // get(this,'session').fetch().catch(session => {
+      var provider = get(this,'session.provider');
+      var sessionID = get(this,'session.uid');
       var uid = get(this,'bidder.uid');
+      console.log(sessionID);
       console.log(uid);
-      if (session.uid = uid) {
+      if (sessionID === uid) {
         set(this,'isMe', true);
       }
       else {
         console.log('not user');
-        set(this,'isMe, false');
+        set(this,'isMe', false);
       }
       if (provider === "twitter") {
         set(this,'hasTwitter', true);
@@ -25,7 +27,7 @@ export default Ember.Component.extend({
       if (provider === "facebook") {
         set(this,'hasFacebook', true);
       }
-    });
+    // });
   },
   sortBy: ['date:desc'],
   sortedBids: Ember.computed.sort('bidder.bids', 'sortBy'),
