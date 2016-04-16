@@ -1,26 +1,27 @@
 import Ember from 'ember';
 
-const { get } = Ember;
+const { get, set } = Ember;
 
 export default Ember.Route.extend({
   beforeModel(){
+    get(this,'session').fetch().catch(session => {
+      var provider = get(this,'session.provider');
+      console.log(session.provider);
+      if (provider === "twitter") {
+        set(this,'hasTwitter', true);
+        console.log(get(this,'hasTwitter'));
+      }
+      if (provider === "facebook") {
+        set(this,'hasFacebook', true);
+        console.log("boy howdy u has facebook");
+      }
+    });
     return get(this,'session').fetch().catch(function(){});
   },
   hasFacebook: false,
   hasTwitter: false,
   model() {
     var uid = this.get('session.uid');
-
-    var provider = this.get('session.provider');
-    console.log(provider);
-    if (provider === "twitter") {
-      this.set('hasTwitter', true);
-      console.log(this.get('hasTwitter'));
-    }
-    if (provider === "facebook") {
-      this.set('hasFacebook', true);
-      console.log("boy howdy u has facebook");
-    }
     return Ember.RSVP.hash({
       bidders: this.store.query('bidder', {
         orderBy: 'uid',
@@ -32,24 +33,6 @@ export default Ember.Route.extend({
       })
     });
   },
-  // canHasNewUser() {
-  //   var uid = this.get('session.uid');
-  //   var username = this.get('session.currentUser.displayName');
-  //   var avatar = this.get('session.currentUser.profileImageURL');
-  //   var users = this.store.query('user', {orderBy: 'uid', equalTo: uid });
-  //   if(users.get('length') === 0){
-  //     var user = this.store.createRecord('user',{
-  //       uid: uid,
-  //       username: username,
-  //       avatar: avatar
-  //     });
-  //     user.save();
-  //     return user;
-  //   }// end if
-  //   else {
-  //     return users.get('firstObject');
-  //   }
-  // },
   getBidder(uid) {
     var bidder = this.store.query('bidder', {
       orderBy: 'uid',
@@ -59,9 +42,5 @@ export default Ember.Route.extend({
   },
   actions: {
 
-
   }
-
-
-
 });
