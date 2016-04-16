@@ -6,10 +6,21 @@ export default Ember.Route.extend({
   beforeModel(){
     return get(this,'session').fetch().catch(function(){});
   },
+  hasFacebook: false,
+  hasTwitter: false,
   model() {
     var uid = this.get('session.uid');
-    console.log(uid);
 
+    var provider = this.get('session.provider');
+    console.log(provider);
+    if (provider === "twitter") {
+      this.set('hasTwitter', true);
+      console.log(this.get('hasTwitter'));
+    }
+    if (provider === "facebook") {
+      this.set('hasFacebook', true);
+      console.log("boy howdy u has facebook");
+    }
     return Ember.RSVP.hash({
       bidders: this.store.query('bidder', {
         orderBy: 'uid',

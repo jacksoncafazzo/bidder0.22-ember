@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    {{partial 'navbar'}}
+    {{navbar-display session=session loginTwitter='loginTwitter' loginFacebook='loginFacebook' logout='logout' accessDenied='accessDenied'}}
     <div class="container-fluid">
     {{outlet}}
     <footer class="footer-lower">

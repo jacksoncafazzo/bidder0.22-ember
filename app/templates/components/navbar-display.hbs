@@ -2,22 +2,25 @@
 {{#md-navbar name='BIDDER'}}
 
 {{#unless session.isAuthenticated}}
-<li>
-  <a href="sign-up">sign up with an email address</a>
-</li>
+<div class="nav-chips">
   <li>
-    <a href="sign-in">sign in with an email address</a>
+    <div class="chip">
+      <a href='#' {{action 'loginFacebook'}}>
+        <img src="/img/bid-icon-new.png" alt="facebook" />
+        Sign in with Facebook
+      </a>
+    </div>
   </li>
   <li>
-    <a href='#' {{action 'loginFacebook'}}>
-      <img src='/img/facebooklogin.png' alt='sign in facebook'/>
-    </a>
+    <div class="chip">
+      <a href='#' {{action 'loginTwitter'}}>
+        <img src="/img/bid-icon-new.png" alt="twitter" />
+        Sign in with Twitter
+      </a>
+    </div>
   </li>
-  <li>
-    <a href='#' {{action 'loginTwitter'}}>
-      <img src='https://g.twimg.com/dev/sites/default/files/images_documentation/sign-in-with-twitter-gray.png' alt='sign in twitter'/>
-    </a>
-  </li>
+</div>
+
 
 {{else}}
   <!-- <li><a href="bidder">PROFILE</a></li> -->
@@ -27,14 +30,15 @@
       {{#if hasFacebook}}
       <a href='http://facebook.com/{{session.currentUser.username}}' target='_blank' class="profile">
         <img src='{{session.currentUser.profileImageURL}}' height='50px' width='50px' alt='contact photo'/>
-      </a>
         {{session.currentUser.displayName}}
+      </a>
       {{/if}}
       {{#if hasTwitter}}
       <a href='http://twitter.com/{{session.currentUser.username}}' target='_blank' class="profile">
         <img src='{{session.currentUser.profileImageURL}}' height='50px' width='50px' alt='contact photo'/>
+        {{session.currentUser.displayName}}
       </a>
-      {{session.currentUser.displayName}}
+      {{else}}
       {{/if}}
     </div>
   </li>

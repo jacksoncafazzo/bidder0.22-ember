@@ -1,8 +1,7 @@
 import Ember from 'ember';
 
 const {get} = Ember;
-
-
+const {set} = Ember;
 
 export default Ember.Route.extend({
   getUser(uid) {
@@ -26,8 +25,10 @@ export default Ember.Route.extend({
     return bidder;
   },
   beforeModel(){
-    return get(this,'session').fetch().catch(function(){});
+    return get(this,'session').fetch().catch(function(){
+    });
   },
+
   hasFacebook: false,
   hasTwitter: false,
   actions:{
