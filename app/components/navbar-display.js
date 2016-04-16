@@ -9,10 +9,9 @@ export default Ember.Component.extend({
     // var uid = this.get('session.uid');
 
     var provider = get(this,'session.provider');
-    console.log(provider);
     if (provider === "twitter") {
       set(this,'hasTwitter', true);
-      console.log(get(this,'hasTwitter'));
+      // console.log("hoo boy you got twitter", get(this,'hasTwitter'));
     }
     if (provider === "facebook") {
       set(this,'hasFacebook', true);
