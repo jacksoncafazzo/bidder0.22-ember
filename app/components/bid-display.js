@@ -3,25 +3,19 @@ import Ember from 'ember';
 const { get } = Ember;
 
 export default Ember.Component.extend({
-  // markers: [
-  //   {
-  //     lat: this.get('bid').latitude,
-  //     lng: this.get('bid').longitude
-  //   }
-  // ],
   bidCircle: Ember.computed('bid.id', 'bid.latitude', 'bid.longitude', function() {
     return {
       id: this.get('bid.id'),         // Recommended
       lat: this.get('bid.latitude'),  // Required
       lng: this.get('bid.longitude'),        // Required
-      radius: 5000,
+      radius: 700,
       clickable: true,
       draggable: true,
       editable: true,
-      fillColor: '#eee',
+      fillColor: '#D32F2F',
       fillOpacity: 0.3,
-      strokeColor: '#ddd',
-      strokeOpacity: 0.3,
+      strokeColor: '#D32F2F',
+      strokeOpacity: 0.7,
       strokePosition: google.maps.StrokePosition.CENTER, // INSIDE | OUTSIDE
       strokeWeight: 3,
       visible: true,

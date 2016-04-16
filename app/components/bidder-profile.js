@@ -29,9 +29,5 @@ export default Ember.Component.extend({
   },
   sortBy: ['date:desc'],
   sortedBids: Ember.computed.sort('bidder.bids', 'sortBy'),
-  isBidder: Ember.computed('session', function() {
-    var uid = get(this,'uid');
-    return uid;
 
-  })
 });

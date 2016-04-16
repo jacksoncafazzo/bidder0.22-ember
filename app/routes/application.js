@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
-const {get} = Ember;
-const {set} = Ember;
+const {get,set} = Ember;
 
 export default Ember.Route.extend({
   getUser(uid) {
@@ -35,7 +34,7 @@ export default Ember.Route.extend({
     loginTwitter(){
       var app = this;
       get(this,'session').open('firebase', { provider: 'twitter'}).then(function(data) {
-        app.set('hasTwitter', true);
+        set(this,'hasTwitter', true);
         console.log(data);
         console.log("u has twitter", app.get('hasTwitter'));
       });
@@ -43,7 +42,7 @@ export default Ember.Route.extend({
     loginFacebook(){
       var app = this;
       get(this,'session').open('firebase', { provider: 'facebook'}).then(function(data) {
-        app.set('hasFacebook', true);
+        set(this,'hasFacebook', true);
         console.log(data);
         console.log("u has facebook", app.get('hasFacebook'));
       });
