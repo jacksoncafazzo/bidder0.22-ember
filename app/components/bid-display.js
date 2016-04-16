@@ -26,9 +26,7 @@ export default Ember.Component.extend({
   init() {
     this._super();
     var bidCircle = this.get('bidCircle');
-    console.log(bidCircle);
     this.get('circles').push(bidCircle);
-    console.log(this.get('circles'));
   },
   circles: Ember.A([]),
   actions: {
@@ -39,8 +37,6 @@ export default Ember.Component.extend({
       this.sendAction('activateBid', bid);
     },
     contact(bidder) {
-      console.log(bidder);
-      var uid = get(bidder,'id');
       this.transitionTo('bidder', bidder.id);
     }
   }

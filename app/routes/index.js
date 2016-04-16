@@ -3,7 +3,8 @@ import Ember from 'ember';
 const { get, set } = Ember;
 
 export default Ember.Route.extend({
-  beforeModel(){
+  init(){
+    this._super();
     get(this,'session').fetch().catch(session => {
       var provider = session.provider;
       if (provider === "twitter") {
