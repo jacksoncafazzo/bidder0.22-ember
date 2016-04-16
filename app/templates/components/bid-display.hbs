@@ -25,7 +25,7 @@
               <h6>I am seeking this service or item</h6>
               {{/if}}
               <h6>Bid Posted: {{moment-from-now bid.date}}</h6>
-              <h6>Contact Bidder: {{bid.bidder.firstName}}</h6>
+              <h6>Contact Bidder: <a href="/bidder/{{bid.bidder.id}}">{{bid.bidder.firstName}}</a></h6>
               {{#if bid.active}}
               <a {{action 'deactivateBid' bid}} class="btn">deactivate</a>
               {{else}}
