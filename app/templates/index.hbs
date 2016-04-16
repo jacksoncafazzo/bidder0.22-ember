@@ -2,11 +2,12 @@
 
 {{#if session.isAuthenticated}}
 <div class="profile-buttons">
-  {{#each model as |bidder|}}
+  {{profile-display bidder=model goToBidder='goToBidder'}}
+  <!-- {{#each model as |bidder|}}
   {{#link-to 'bidder' bidder.id}}
   <a class='btn waves'>Go to my profile page</a>
   {{/link-to}}
-  {{/each}}
+  {{/each}} -->
   <a href="new-profile" class="btn waves">create a profile</a>
 </div>
 

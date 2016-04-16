@@ -27,6 +27,9 @@ export default Ember.Route.extend({
   },
 
   actions: {
-
+    goToBidder(params, bidder) {
+      console.log(bidder);
+      this.transitionTo('bidder', bidder);
+    }
   }
 });
