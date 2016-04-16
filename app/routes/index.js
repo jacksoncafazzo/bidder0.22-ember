@@ -1,20 +1,26 @@
 import Ember from 'ember';
 
-const { get, set } = Ember;
+const { get, set, store } = Ember;
 
 export default Ember.Route.extend({
-  init(){
-    this._super();
-    get(this,'session').fetch().catch(session => {
-      var provider = session.provider;
+  beforeModel(){
+      var provider = get(this,'provider');
+      var uid = get(this,'session.uid');
+      console.log(uid);
+      var bidder = this.store.query('bidder', {
+      orderBy: 'uid',
+      equalTo: uid
+      });
+      this.set('bidder', bidder);
       if (provider === "twitter") {
         set(this,'hasTwitter', true);
       }
       if (provider === "facebook") {
         set(this,'hasFacebook', true);
       }
-    });
+      console.log(get(this,'bidder'));
   },
+  bidder: {},
   hasFacebook: false,
   hasTwitter: false,
   model() {
@@ -22,10 +28,7 @@ export default Ember.Route.extend({
 
     // console.log(this.get('bidders'));
     return Ember.RSVP.hash({
-      bidders: this.store.query('bidder', {
-      orderBy: 'uid',
-      equalTo: uid
-      }),
+      bidder: this.get('bidder'),
       user: this.store.query('user', {
         orderBy: 'uid',
         equalTo: uid

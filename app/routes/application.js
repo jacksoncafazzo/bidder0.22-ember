@@ -32,19 +32,17 @@ export default Ember.Route.extend({
   hasTwitter: false,
   actions:{
     loginTwitter(){
-      var app = this;
       get(this,'session').open('firebase', { provider: 'twitter'}).then(function(data) {
         set(this,'hasTwitter', true);
         console.log(data);
-        console.log("u has twitter", app.get('hasTwitter'));
+        console.log("u has twitter", get(this,'hasTwitter'));
       });
     },
     loginFacebook(){
-      var app = this;
       get(this,'session').open('firebase', { provider: 'facebook'}).then(function(data) {
         set(this,'hasFacebook', true);
         console.log(data);
-        console.log("u has facebook", app.get('hasFacebook'));
+        console.log("u has facebook", get(this,'hasFacebook'));
       });
     },
     logout(){
@@ -53,6 +51,10 @@ export default Ember.Route.extend({
     },
     accessDenied() {
       this.transitionTo('/');
+    },
+    signOut() {
+      get(this,'session').close();
+      this.transitionToRoute('/');
     }
   }
 });
