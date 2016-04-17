@@ -1,29 +1,12 @@
 <div class="hero message-hero">
   <div class='container page-header'>
     <form>
-      {{#md-card id='message'}}
+      {{#md-card id='bidMessage'}}
       {{#md-card-content}}
-      {{md-textarea value=bidResponse id='message' label="Your message" validate='true'}}
+      {{md-textarea value=message label="Your message" validate='true'}}
       {{/md-card-content}}
       {{/md-card}}
-      <div class="row">
-        <div class="col s12">
-          <ul class='tabs'>
-            <li class='tab co1 s3'><a >Share contact info</a></li>
-            <li class='tab col s3'><a >Do Not Share</a></li>
-          </ul>
-          <div class="indicator indicator1"></div>
-          <div class="indication indicator2"></div>
-        </div>
-      </div>
-      <div id='sharing' class="col s12">
-        sharing
-      </div>
-      <div id='notsharing' class="col s12">
-        notsharing
-      </div>
-      {{md-tabs content=sharings selected=sharing}}
-    </form>
+
     {{bidResponse}}
     {{sharing}}
     {{#if hasTwitter}}
@@ -48,18 +31,18 @@
         <div class="chip">
           <a href='http://facebook.com/{{session.currentUser.username}}' target='_blank' class="profile">
             <img src='{{session.currentUser.profileImageURL}}' height='50px' width='50px' alt='contact photo'/>
-            {{log session}}
             {{session.currentUser.displayName}}
           </a>
         </div>
         {{/if}}
       </div>
     </div>
-
     {{/if}}
+    {{md-tabs content=sharings selected=sharing}}
     <div class="or-phone">
       <h5>{{bidder.firstName}} also left a number. Send them a text or somethin :)</h5>
       <h5><i class="material-icons">contact_phone</i>{{bidder.phone}}</h5>
     </div>
-  </div>
+  </form>
+</div>
 </div>

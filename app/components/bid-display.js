@@ -1,8 +1,31 @@
 import Ember from 'ember';
 
-const { get } = Ember;
+const { get,set } = Ember;
 
 export default Ember.Component.extend({
+  hasFacebook: false,
+  hasTwitter: false,
+  isMe: false,
+  init(){
+    this._super();
+    var bidCircle = this.get('bidCircle');
+    this.get('circles').push(bidCircle);
+    var whoU = this.get('whoU');
+    this.set('hasTwitter', whoU['hasTwitter']);
+    this.set('hasFacebook', whoU['hasFacebook']);
+    this.set('isMe', whoU['isMe']);
+    var sessionUID = get(this,'session.uid');
+    var bidderUID = get(this,'bid.uid');
+    console.log("session",sessionUID);
+    console.log(bidderUID);
+    if (sessionUID === bidderUID) {
+      set(this,'isMe', true);
+    }
+    else {
+      console.log('not user');
+      set(this,'isMe', false);
+    }
+  },
   bidCircle: Ember.computed('bid.id', 'bid.latitude', 'bid.longitude', function() {
     return {
       id: this.get('bid.id'),         // Recommended
@@ -23,11 +46,7 @@ export default Ember.Component.extend({
     };
   }),
   gmap: Ember.inject.service('g-map'),
-  init() {
-    this._super();
-    var bidCircle = this.get('bidCircle');
-    this.get('circles').push(bidCircle);
-  },
+
   circles: Ember.A([]),
   actions: {
     deactivateBid(bid) {

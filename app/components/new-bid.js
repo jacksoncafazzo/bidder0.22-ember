@@ -5,12 +5,8 @@ export default Ember.Component.extend({
   marker: {},
   categoryShow: false,
   showNewBidForm: false,
-  markerLat: Ember.computed('marker', function() {
-    return this.get('marker.lat');
-  }),
-  markerLng: Ember.computed('marker', function() {
-    return this.get('marker.lng');
-  }),
+  markerLat: 42,
+  markerLng: -126,
   categories: [
     {id: 'general', title: 'General'},
     {id: 'yard', title: 'Yard/Garden'},
@@ -40,7 +36,9 @@ export default Ember.Component.extend({
       //   draggable: false,
       //   cursor: "pointer"
       // };
+      console.log(this.get('bidder.uid'));
       var params = {
+        uid: this.get('bidder.uid'),
         category: this.get('category'),
         title: this.get('title'),
         location: this.get('location'),

@@ -1,6 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
+  uid: DS.attr(),
   date: DS.attr('date', {defaultValue() {return new Date(); } }),
   category: DS.attr(),
   title: DS.attr(),

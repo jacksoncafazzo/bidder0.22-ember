@@ -1,6 +1,6 @@
 {{#if isMe}}
-{{update-profile bidder=bidder updateProfile="updateProfile"}}
 {{new-bid postBid='postBid' bidder=bidder}}
+{{update-profile bidder=bidder updateProfile="updateProfile"}}
 <div class="hero profile-hero">
   <section class="module parallax parallax-2">
     <div class="container hero-text-profile">
@@ -22,16 +22,11 @@
 </div>
 
 {{else}}
-<div class="hero profile-hero">
-  <section class="module parallax parallax-2">
-    <div class="container hero-text-profile">
-      <div class='page-header'>
-        <h4>Respond to {{bidder.firstName}}'s bid</h4>
-        <h5>in {{bidder.hood}}</h5>
+{{new-message bidder=bidder sendMessage='sendMessage' session=session}}
+<div class="profile-buttons">
+  <a href='/' class='btn waves-effect waves-white'>back home</a>
+  <a href='all-bids' class='btn waves-effect waves-white'>view all bids</a>
 
-        <h5>Phone  - <i class="material-icons">contact_phone</i> -  {{bidder.phone}}</h5>
-      </div>
-    </div>
-  </section>
 </div>
+
 {{/if}}
