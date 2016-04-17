@@ -1,21 +1,10 @@
-
-
 {{#if session.isAuthenticated}}
 <div class="profile-buttons">
-  {{profile-display bidder=model goToBidder='goToBidder'}}
-  <!-- {{#each model as |bidder|}}
-  {{#link-to 'bidder' bidder.id}}
-  <a class='btn waves'>Go to my profile page</a>
-  {{/link-to}}
-  {{/each}} -->
-  <a href="new-profile" class="btn waves">create a profile</a>
+  <a href='all-bids' class='btn waves-effect waves-white'>view all bids</a>
+  <a href="new-profile" class="btn waves-effect waves-white">create new a profile</a>
+{{profile-display bidder=model goToBidder='goToBidder'}}
 </div>
-
-  <!-- {{new-profile saveProfile="saveProfile"}} -->
-      <!-- <h5>Thanks for authorizing</h5>
-
-      <a href="index.hbs#ref"><i class="fa fa-angle-down" aria-hidden="true"></i></a> -->
-
+<a href="index.hbs#ref"></a>
 {{md-parallax image="/img/gardening-bg.png" class="parallax-img2"}}
   <div class="row container grey-heading">
     <div class="col m12 s12">
@@ -168,8 +157,5 @@
       <p>ABOUT US</p>
       {{#link-to 'about'}}Read{{/link-to}}
     </div>
-
   </div>
-
-
 {{/if}}

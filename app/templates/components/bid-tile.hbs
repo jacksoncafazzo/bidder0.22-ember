@@ -6,7 +6,7 @@
 {{#md-collapsible icon="mdi-image-filter-drama"
 title=bid.title}}
 {{#link-to 'bid' bid.id}}{{bid.title}}{{/link-to}}
-<h6>Bid Value: ${{bid.payment}}</h6>
+<h6>Bid: {{bid.payment}}</h6>
 <h6>Posted: {{moment-format bid.date}}</h6>
   {{/md-collapsible}}
 {{/md-card-collapsible}}
