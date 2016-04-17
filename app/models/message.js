@@ -1,10 +1,11 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  bidResponse: DS.attr(),
+  content: DS.attr(),
   senderName: DS.attr(),
+  senderHandle: DS.attr(),
   senderUID: DS.attr(),
-  senderContact: DS.attr(),
   senderAvatar: DS.attr(),
+  posted: DS.attr(),
   bid: DS.belongsTo('bid', { async: true })
 });

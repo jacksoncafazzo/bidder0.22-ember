@@ -1,11 +1,12 @@
 <div class="hero message-hero">
   <div class='container page-header'>
     <form>
+      
     <div class="row">
-      <h4>Contact {{bid.bidder.firstName}}</h4>
+      <h4 class='center'>Contact {{bid.bidder.firstName}}</h4>
         {{#md-card id='bidMessage'}}
         {{#md-card-content}}
-        {{md-textarea value=message label="Your message" validate='true'}}
+        {{md-textarea value=content label="Your message" validate='true'}}
         {{/md-card-content}}
         {{/md-card}}
     </div>
@@ -33,7 +34,6 @@
       <div class="card">
         <div class="card-content personal-content">
           <span class="card-title activator white-text text-darken-4">This is the contact information you will share</span>
-          {{log session}}
           {{#if sharing}}
           <div class="chip">
             <a href='http://facebook.com/profile.php?id={{session.currentUser.id}}' target='_blank' class="profile">
@@ -46,9 +46,12 @@
       </div>
     </div>
     {{/if}}
+    <div class="profile-buttons">
+      <a class="btn waves-effect waves-white" {{action 'postMessage' bid}}>send message</a>
+    </div>
     <!-- end social -->
     <div class="or-phone">
-      <h5>{{bidder.firstName}} also left a number. Send them a text or somethin :)</h5>
+      <h5>{{bid.bidder.firstName}} also left a number. Send them a text or somethin :)</h5>
       <h5><i class="material-icons">contact_phone</i>{{bidder.phone}}</h5>
     </div>
   </form>

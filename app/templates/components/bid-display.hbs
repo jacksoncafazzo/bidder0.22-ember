@@ -19,7 +19,6 @@
           <h6>Active: {{bid.active}}</h6>
           <h6>Type of bid: {{bid.providing}}</h6>
           <h6>Bid Posted: {{moment-from-now bid.date}}</h6>
-          {{isMe}}
           {{#if isMe}}
             <h6>Hey! You made this bid!</h6>
             {{#if bid.active}}
@@ -42,6 +41,29 @@
    </div>
  </div>
   {{#if isMe}}
+  <div class="row">
+    <div class="container message-tile">
+      <h4>Messages for this bid</h4>
+      <ul>
+        {{#each bid.messages as |message|}}
+        <li>
+        {{#md-card id=message.id}}
+          {{#md-card-content}}
+            <h5>{{message.content}}</h5>
+            <div class="chip">
+              <a href='http://facebook.com/profile.php?id={{message.senderHandle}}' target='_blank'>
+                <img src='{{message.senderAvatar}}' height='50px' width='50px' alt='contact photo'/>
+                {{message.senderName}}
+              </a>
+            </div>
+            <h5>Posted: {{moment-from-now message.posted}}</h5>
+          {{/md-card-content}}
+      {{/md-card}}
+      </li>
+    {{/each}}
+  </ul>
+  </div>
+</div>
   {{else}}
-  {{new-message bid=bid bidder=bidder sendMessage='sendMessage' session=session}}
+  {{new-message bid=bid bidder=bidder postMessage='postMessage' session=session}}
   {{/if}}

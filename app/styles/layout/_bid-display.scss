@@ -95,3 +95,12 @@
   border-color: blue;
   border-width: thick;
 }
+
+.message-tile {
+
+  h4 {
+    color: darken(white, 4);
+    text-shadow: 2px 2px 2px black;
+    text-align: center;
+  }
+}

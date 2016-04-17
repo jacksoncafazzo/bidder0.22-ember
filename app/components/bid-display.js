@@ -57,6 +57,9 @@ export default Ember.Component.extend({
     },
     contact(bidder) {
       this.transitionTo('bidder', bidder.id);
+    },
+    postMessage(params) {
+      this.sendAction('postMessage', params);
     }
   }
 });
