@@ -10,11 +10,11 @@ export default Ember.Route.extend({
     let provider = get(this,'session.provider');
     if (provider === "twitter") {
       set(this,'hasTwitter', true);
-      console.log('twit twit');
+      // console.log('twit twit');
     }
     if (provider === "facebook") {
       set(this,'hasFacebook', true);
-      console.log('fb');
+      // console.log('fb');
     }
 
   },

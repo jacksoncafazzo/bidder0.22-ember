@@ -36,15 +36,15 @@ export default Ember.Route.extend({
 
         console.log(data);
         console.log("u has twitter");
-        // this.transitionTo('index');
       });
+      // this.transitionTo('all-bids');
     },
     loginFacebook(){
       get(this,'session').open('firebase', { provider: 'facebook'}).then(function(data) {
         set(this,'hasFacebook', true);
         console.log(data);
         console.log("u has facebook", get(this,'hasFacebook'));
-        // this.transitionTo('/');
+        // this.transitionTo('all-bids');
       });
     },
     logout(){
