@@ -1,52 +1,52 @@
 {{#if showNewBidForm}}
-  <div class='panel panel-default'>
-      <div class='panel-heading'><h5>Create a bid, yo</h5>
-        <form>
-          Categories:
-          {{md-tabs
-            content=categories
-            selected=category}}
-          <!-- {{#if categoryShow}}
-            {{#md-radios
-              selection=category
-              optionValuePath='id'
-              optionLabelPath='text'}}
-              <p>{{md-radio value='general' name="General"}}</p>
-              <p>{{md-radio value='yard' name="Yard/Garden"}}</p>
-              <p>{{md-radio value='tech' name="Technology"}}</p>
-              <p>{{md-radio value='house' name="Household"}}</p>
-              <p>{{md-radio value='animals' name="Animals"}}</p>
-              <p>{{md-radio value='education' name="Education"}}</p>
-            {{/md-radios}}
-          {{/if}} -->
-          {{md-btn action='showCategories' text='Categories'}}
-          <br>
-          <br>
-          Service Details:
-          {{#md-radios
-            selection=providing
-            optionValuePath='id'
-            optionLabelPath='text'}}
-            <p>{{md-radio value=true name="I'm Providing a Service"}}</p>
-            <p>{{md-radio value=false name="I'm Seeking a Service "}}</p>
-          {{/md-radios}}
-        <br>
-          {{md-input value=title label="Bid Title" validate="true"}}
-          {{md-input value=location label="Bid Location" validate="true"}}
-          {{md-input value=payment label="Bid for services or items rendered or provided" validate="true"}}
-          {{md-textarea value=description label="Description" validate="true"}}
-          Ideal Job Start Date:
-          {{md-input value=jobStart type='date' class='datePicker' validate="true"}}
-          Ideal Job End Date:
-          {{md-input value=jobEnd type='date' validate="true"}}
-          {{md-btn action='postBid' text='post bid'}}
-        </form>
-
-      </div>
-      <div class='panel-body'>
-        {{bid-map createMarker='createMarker'}}
-      </div>
+<div class="row">
+  <div class="col m2 s12 profile-btn">
+      {{md-btn action="showBidForm" text="hide form"}}
   </div>
+  <div class="col m10 s12 update-form new-bid">
+    <form>
+      <h3>Your Bid</h3>
+      {{md-input value=title label="Bid Title" validate="true"}}
+      {{md-tabs content=providing selected=provided colWidth=4}}
+      {{md-input value=payment label="Amount for service or item rendered or provided" validate="true"}}
+      <h3>Categories</h3>
+      {{md-tabs content=categories selected=category}}
+      {{md-input value=location label="General Location" validate="true"}}
+      {{bid-map createMarker='createMarker'}}
+      {{md-input value=description label="Additional notes, descriptions or requirements" validate="true"}}
+      <div class="col m6">
+        Ideal job start date
+        {{md-input value=jobStart type='date' class='datePicker' validate="true"}}
+        {{md-input value=startTime type='time' class='timePicker' validate="true" label='time'}}
+      </div>
+      <div class="col m6">
+        Ideal Job end date
+        {{md-input value=jobEnd type='date' validate="true"}}
+        {{md-input value=endTime type='time' class='timePicker' validate="true" label='time'}}
+      </div>
+      <ul>
+        <li><h4>Bid Review</h4></li>
+        <li>Change values above</li>
+        <li>Bid title: {{title}}</li>
+        <li>General Location: {{location}}</li>
+        <li>Bid Type: {{provided}}</li>
+        <li>Category: {{category}}</li>
+        <li>Description: {{description}}</li>
+        <li>Start date: {{moment-format jobStart}}</li>
+        <li>Start time: {{startTime}}</li>
+        <li>End date: {{moment-format jobEnd}}</li>
+        <li>End time: {{endTime}}</li>
+      </ul>
+      {{md-btn class='center btn-large' action='postBid' text='post bid'}}
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
 {{else}}
   {{md-btn action='showBidForm' text='Post a New Bid!'}}
 {{/if}}

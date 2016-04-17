@@ -21,20 +21,20 @@ export default Ember.Route.extend({
       this.transitionTo('bidder', bidder);
 
     },
-    postBid(params, markerParams) {
-      var marker = this.store.createRecord('marker', markerParams);
-      marker.save();
-      params['marker'] = marker;
+    postBid(params) {
+      // var marker = this.store.createRecord('marker', markerParams);
+      // marker.save();
+      // params['marker'] = marker;
       var newBid = this.store.createRecord('bid', params);
-      marker['bid'] = newBid;
-      console.log(marker);
+      // marker['bid'] = newBid;
+      // console.log(newBid);
       var bidder = params.bidder;
       bidder.get('bids').addObject(newBid);
       newBid.save().then(function() {
         return bidder.save();
       });
 
-      this.transitionTo('all-bids');
+      this.transitionTo('bidder', params.bidder);
 
     },
     createMarker(marker) {

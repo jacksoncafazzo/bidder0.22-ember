@@ -34,6 +34,9 @@ export default Ember.Component.extend({
   actions: {
     updateProfile(bidder, params) {
       this.sendAction('updateProfile', bidder, params);
+    },
+    postBid(params) {
+      this.sendAction('postBid',params);
     }
   }
 });
