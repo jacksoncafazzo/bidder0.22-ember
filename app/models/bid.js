@@ -17,6 +17,7 @@ export default DS.Model.extend({
   longitude: DS.attr(),
   marker: DS.belongsTo('marker', { async: true }),
   bidder: DS.belongsTo('bidder', { async: true }),
+  messages: DS.hasMany('message', {async: true })
   // user: DS.belongsTo('user', { async: true })
   // jobbers: DS.hasMany('jobbers', { async: true })
 });
