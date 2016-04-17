@@ -30,7 +30,7 @@ export default Ember.Component.extend({
       this.toggleProperty('categoryShow');
     },
     showBidForm() {
-      this.set('showNewBidForm', true);
+      this.toggleProperty('showNewBidForm');
     },
     postBid() {
       // var marker = this.marker;

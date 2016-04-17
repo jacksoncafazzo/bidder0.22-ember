@@ -1,15 +1,14 @@
 .hero-profile {
-  min-height: 650px;
 }
 
 .hero-text-profile {
-  // position: absolute;
-  padding-top: 150px;
-
+  position: absolute;
+  top: 140px;
+  left: 45px;
   h1, h2, h3, h4, h5 {
     color: white;
     text-shadow: 2px 2px rgb(51, 51, 51);
-    padding-bottom: 50px;
+    padding-bottom: 20px;
   }
 }
 
@@ -23,4 +22,10 @@ section.module.parallax {
 
 section.module.parallax-2 {
   background-image: url(/img/post-bid-bg.png);
+}
+
+.bidder-bids h4 {
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 0px;
 }

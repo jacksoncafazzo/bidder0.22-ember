@@ -6,7 +6,6 @@ export default Ember.Component.extend({
   hasTwitter: false,
   init() {
     this._super();
-    // var uid = this.get('session.uid');
 
     var provider = get(this,'session.provider');
     if (provider === "twitter") {
@@ -15,12 +14,10 @@ export default Ember.Component.extend({
     }
     if (provider === "facebook") {
       set(this,'hasFacebook', true);
-      console.log("boy howdy u has facebook");
+      // console.log("boy howdy u has facebook");
     }
   },
-  model() {
-    return {message: "hey bud"};
-  },
+  
   actions: {
     loginTwitter() {
       this.sendAction('loginTwitter');

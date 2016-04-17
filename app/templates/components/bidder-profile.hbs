@@ -3,30 +3,35 @@
 {{new-bid postBid='postBid' bidder=bidder}}
 <div class="hero profile-hero">
   <section class="module parallax parallax-2">
-    <div class="container hero-text-profile center">
+    <div class="container hero-text-profile">
       <div class='page-header'>
         <h4>{{bidder.firstName}} {{bidder.lastName}}'s Profile</h4>
 
         <h5>{{bidder.hood}}</h5>
-        <h5>Phone: {{bidder.phone}}</h5>
+        <h5>Phone  - <i class="material-icons">contact_phone</i> -  {{bidder.phone}}</h5>
         <h5>unique uid: {{bidder.user.uid}}</h5>
       </div>
     </div>
   </section>
 </div>
-
-<div class='page-header'>
-  <h4>{{bidder.firstName}} {{bidder.lastName}}'s Profile</h4>
-  <img src="{{bidder.profileImageURL}}" alt="user profile pic" />
-  <br>
-  {{bidder.hood}}
-  <h5>Phone: {{bidder.phone}}</h5>
-  <h5>unique uid: {{bidder.user.uid}}</h5>
+<div class='container bidder-bids'>
   <h4>{{bidder.firstName}}'s Bid History</h4>
   {{#each sortedBids as |bid|}}
   {{bid-tile bid=bid}}
   {{/each}}
 </div>
+
 {{else}}
-hi leave a message
+<div class="hero profile-hero">
+  <section class="module parallax parallax-2">
+    <div class="container hero-text-profile">
+      <div class='page-header'>
+        <h4>Respond to {{bidder.firstName}}'s bid</h4>
+        <h5>in {{bidder.hood}}</h5>
+
+        <h5>Phone  - <i class="material-icons">contact_phone</i> -  {{bidder.phone}}</h5>
+      </div>
+    </div>
+  </section>
+</div>
 {{/if}}
