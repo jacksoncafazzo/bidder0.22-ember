@@ -1,5 +1,3 @@
-
-
 <div class="row header-discription">
   <div class="col s12">
     <h1>Bid Description {{log model.isMe}}</h1>
@@ -45,6 +43,5 @@
  </div>
   {{#if isMe}}
   {{else}}
-  <h4>Contact {{bid.bidder.firstName}}</h4>
   {{new-message bid=bid bidder=bidder sendMessage='sendMessage' session=session}}
   {{/if}}

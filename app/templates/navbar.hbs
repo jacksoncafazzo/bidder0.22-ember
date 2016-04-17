@@ -25,7 +25,7 @@
   <li>
     <div class="chip">
       {{#if hasFacebook}}
-      <a href='http://facebook.com/{{session.currentUser.username}}' target='_blank' class="profile">
+      <a href='http://facebook.com/profile.php?id={{session.currentUser.id}}' target='_blank' class="profile">
         <img src='{{session.currentUser.profileImageURL}}' height='50px' width='50px' alt='contact photo'/>
       </a>
         {{session.currentUser.displayName}}

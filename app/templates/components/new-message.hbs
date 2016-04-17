@@ -1,48 +1,57 @@
 <div class="hero message-hero">
   <div class='container page-header'>
     <form>
-      {{#md-card id='bidMessage'}}
-      {{#md-card-content}}
-      {{md-textarea value=message label="Your message" validate='true'}}
-      {{/md-card-content}}
-      {{/md-card}}
-
-    {{bidResponse}}
-    {{sharing}}
+    <div class="row">
+      <h4>Contact {{bid.bidder.firstName}}</h4>
+        {{#md-card id='bidMessage'}}
+        {{#md-card-content}}
+        {{md-textarea value=message label="Your message" validate='true'}}
+        {{/md-card-content}}
+        {{/md-card}}
+    </div>
+    {{md-tabs content=sharings selected=sharing}}
     {{#if hasTwitter}}
-
-    <div class="card">
-      <div class="card-content personal-content">
-        <span class="card-title activator white-text text-darken-4">This is the personal information you are sharing</span>
-        <div class="chip">
-          <a href='http://twitter.com/{{session.currentUser.username}}' target='_blank' class="profile">
-            <img src='{{session.currentUser.profileImageURL}}' height='50px' width='50px' alt='contact photo'/>
-            {{session.currentUser.username}}
-          </a>
+    <div class="row">
+      <div class="card">
+        <div class="card-content personal-content">
+          <span class="card-title activator white-text text-darken-4">This is the personal information you are sharing</span>
+          {{#if sharing}}
+          <div class="chip">
+            <a href='http://twitter.com/{{session.currentUser.username}}' target='_blank' class="profile">
+              <img src='{{session.currentUser.profileImageURL}}' height='50px' width='50px' alt='contact photo'/>
+              {{session.currentUser.username}}
+            </a>
+          </div>
+          {{/if}}
         </div>
       </div>
     </div>
 
+    <!-- u has facebook   -->
     {{else}}
-    <div class="card">
-      <div class="card-content personal-content">
-        <span class="card-title activator white-text text-darken-4">This is the personal information you are sharing</span>
-        {{#if sharing}}
-        <div class="chip">
-          <a href='http://facebook.com/{{session.currentUser.username}}' target='_blank' class="profile">
-            <img src='{{session.currentUser.profileImageURL}}' height='50px' width='50px' alt='contact photo'/>
-            {{session.currentUser.displayName}}
-          </a>
+    <div class="row">
+      <div class="card">
+        <div class="card-content personal-content">
+          <span class="card-title activator white-text text-darken-4">This is the contact information you will share</span>
+          {{log session}}
+          {{#if sharing}}
+          <div class="chip">
+            <a href='http://facebook.com/profile.php?id={{session.currentUser.id}}' target='_blank' class="profile">
+              <img src='{{session.currentUser.profileImageURL}}' height='50px' width='50px' alt='contact photo'/>
+              {{session.currentUser.displayName}}
+            </a>
+          </div>
+          {{/if}}
         </div>
-        {{/if}}
       </div>
     </div>
     {{/if}}
-    {{md-tabs content=sharings selected=sharing}}
+    <!-- end social -->
     <div class="or-phone">
       <h5>{{bidder.firstName}} also left a number. Send them a text or somethin :)</h5>
       <h5><i class="material-icons">contact_phone</i>{{bidder.phone}}</h5>
     </div>
   </form>
+
 </div>
 </div>
