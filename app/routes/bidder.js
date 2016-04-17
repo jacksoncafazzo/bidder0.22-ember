@@ -40,6 +40,10 @@ export default Ember.Route.extend({
     createMarker(marker) {
       this.markers.push(marker);
       // console.log(this.markers);
+    },
+    goToBidder(params, bidder) {
+      console.log(bidder);
+      this.transitionTo('bidder', bidder);
     }
   }
 });

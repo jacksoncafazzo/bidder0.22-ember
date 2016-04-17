@@ -1,0 +1,25 @@
+.tabs {
+  a {
+    color: $primary-color;
+    // text-shadow: 1px 1px 1px lighten($primary-color, 1);;
+    font-weight: bold;
+  }
+  a:hover {
+    background-color: $primary-color;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    cursor: pointer;
+  },
+  a:active {
+    background-color: white;
+  }
+  a:selected {
+    background-color: green;
+  }
+  .indicator {
+    background-color: $primary-color;
+  }
+  .input-field label {
+    color: $primary-color;
+  }
+}
