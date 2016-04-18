@@ -63,7 +63,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.baseURL = '/bidder022-ember/dist';
+    ENV.locationType = 'hash';
   }
 
   return ENV;

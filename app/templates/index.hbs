@@ -2,160 +2,154 @@
 <div class="profile-buttons">
   <a href='all-bids' class='btn waves-effect waves-white'>view all bids</a>
   <a href="new-profile" class="btn waves-effect waves-white">create new a profile</a>
-{{profile-display bidder=model goToBidder='goToBidder'}}
+  {{profile-display bidder=model goToBidder='goToBidder'}}
 </div>
 <a href="index.hbs#ref"></a>
 {{md-parallax image="/img/gardening-bg.png" class="parallax-img2"}}
-  <div class="row container grey-heading">
-    <div class="col m12 s12">
+<div class="row container grey-heading">
+  <div class="col m12 s12">
+    <h3>How it Works</h3>
+  </div>
+  <div class="col m4 s12">
+    <i class="medium material-icons">mode_edit</i>
+    <p>Bidders post odd jobs and what they are willing to pay.</p>
+  </div>
+  <div class="col m4 s12">
+    <i class="medium material-icons">thumb_up</i>
+    <p>Jobbers let Bidders know they are interested in offering their services.</p>
+  </div>
+  <div class="col m4 s12">
+    <i class="medium material-icons">vpn_key</i>
+    <p>Bidders contact interested jobbers to get the job done!</p>
+  </div>
+</div>
+{{md-parallax image="/img/laundry-bg.png" class="parallax-img2"}}
+<div class="section grey lighten-2">
+  <div class="row setWidth">
+    <div class="col m6 s12">
+      <div class="imageLink1 hoverEffect">
+        <a href="#"> <img src="/img/post-a-bid.png" alt="post a bid image link"/></a>
+      </div>
+    </div>
+    <div class="col m6 s12">
+      <div class="imageLink2 hoverEffect">
+        <a href="#"> <img src="/img/offer-services-blue.png" alt="offer skills image link" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+{{md-parallax image="/img/cleaning-bg.png" class="parallax-img2"}}
+<div class="second-parallax-mid">
+  <div class="row whatWeDo-title">
+    <div id="ref"></div>
+    <h3>What We Do</h3>
+  </div>
+  <div class="row whatWeDo-body">
+    <div class="col s6">
+      <div class="wwd-statement">
+        <h5>PROFESSIONALS</h5>
+        <p>Bidder creates the perfect opportunity for you to use your professional skills anytime, anywhere. </p>
+      </div>
+    </div>
+    <div class="col s6">
+      <div class="wwd-statement">
+        <h5>COMMUNITY</h5>
+        <p>We aim to bring communities together by connecting skills with labor in the easiest way posible.</p>
+      </div>
+    </div>
+  </div>
+  <div class="row whatWeDo-body">
+    <div class="col s6">
+      <div class="wwd-statement">
+        <h5>PROVIDERS</h5>
+        <p>Let Bidder provide for you! We are the solution to all your dirty work, spring cleaning, lawn-mowing, meal-cooking, and much more.</p>
+      </div>
+    </div>
+    <div class="col s6">
+      <div class="wwd-statement">
+        <h5>RESOURCES</h5>
+        <p>Become a resource to your community! Connect with jobs in your area that need your skills and talent to earn extra income.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{{md-parallax image="/img/techhelp-bg.png" class="parallax-img2"}}
+<div class="row footer-upper">
+  <div class="col s4">
+    <p>CONTACT US</p>
+    <p class="contact">info@bidder.com</p>
+  </div>
+  <div class="col s4">
+    <p>SOCIAL MEDIA</p>
+    <p class="social-media"><i class="fa fa-facebook-official" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-github-alt" aria-hidden="true"></i> <i class="fa fa-instagram" aria-hidden="true"></i></p>
+  </div>
+  <div class="col s4">
+    <p>ABOUT US</p>
+    <p class="contact">{{#link-to 'about'}}About{{/link-to}}</p>
+  </div>
+</div>
+{{else}}
+
+  <!-- if session is not authenticated -->
+<div class="hero">
+  <section class="module parallax parallax-1">
+    <div class="container hero-text center">
+      <h2>Welcome to Bidder</h2>
+    </div>
+  </section>
+</div>
+<div class="section grey lighten-2">
+  <div class="row container">
+    <div class="col s12">
       <h3>How it Works</h3>
     </div>
-    <div class="col m4 s12">
+    <div class="col s4">
       <i class="medium material-icons">mode_edit</i>
       <p>Bidders post odd jobs and what they are willing to pay.</p>
     </div>
-    <div class="col m4 s12">
+    <div class="col s4">
       <i class="medium material-icons">thumb_up</i>
       <p>Jobbers let Bidders know they are interested in offering their services.</p>
     </div>
-    <div class="col m4 s12">
+    <div class="col s4">
       <i class="medium material-icons">vpn_key</i>
       <p>Bidders contact interested jobbers to get the job done!</p>
     </div>
   </div>
-  {{md-parallax image="/img/laundry-bg.png" class="parallax-img2"}}
-    <div class="section grey lighten-2">
-      <div class="row setWidth">
-        <div class="col m6 s12">
-          <div class="imageLink1 hoverEffect">
-            <a href="#"> <img src="/img/post-a-bid.png" alt="post a bid image link"/></a>
-          </div>
-        </div>
-        <div class="col m6 s12">
-          <div class="imageLink2 hoverEffect">
-            <a href="#"> <img src="/img/offer-services-blue.png" alt="offer skills image link" /></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    {{md-parallax image="/img/cleaning-bg.png" class="parallax-img2"}}
-    <div class="second-parallax-mid">
-
-      <div class="row whatWeDo-title">
-        <div id="ref"></div>
-        <h3>What We Do</h3>
-      </div>
-      <div class="row whatWeDo-body">
-        <div class="col s6">
-          <div class="wwd-statement">
-            <!-- <div class="glyphy"><i class="small material-icons">work</i></div> -->
-            <h5>PROFESSIONALS</h5>
-            <p>Bidder creates the perfect opportunity for you to use your professional skills anytime, anywhere. </p>
-          </div>
-        </div>
-        <div class="col s6">
-          <div class="wwd-statement">
-            <h5>COMMUNITY</h5>
-            <p>We aim to bring communities together by connecting skills with labor in the easiest way posible.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row whatWeDo-body">
-        <div class="col s6">
-          <div class="wwd-statement">
-            <h5>PROVIDERS</h5>
-            <p>Let Bidder provide for you! We are the solution to all your dirty work, spring cleaning, lawn-mowing, meal-cooking, and much more.</p>
-          </div>
-        </div>
-        <div class="col s6">
-          <div class="wwd-statement">
-            <h5>RESOURCES</h5>
-            <p>Become a resource to your community! Connect with jobs in your area that need your skills and talent to earn extra income.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    {{md-parallax image="/img/techhelp-bg.png" class="parallax-img2"}}
-
-
-  <div class="row footer-upper">
-    <div class="col s4">
-      <p>CONTACT US</p>
-      <p class="contact">info@bidder.com</p>
+</div>
+{{md-parallax image="/img/techhelp-bg.png" class="parallax-img2"}}
+<div class="section grey lighten-2">
+  <div class="row container">
+    <div class="col s12">
+      <h3>Other Content</h3>
     </div>
     <div class="col s4">
-      <p>SOCIAL MEDIA</p>
-      <p class="social-media"><i class="fa fa-facebook-official" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-github-alt" aria-hidden="true"></i> <i class="fa fa-instagram" aria-hidden="true"></i></p>
+      <i class="medium material-icons">mode_edit</i>
+      <p>this would be a good place for more content</p>
     </div>
     <div class="col s4">
-      <p>ABOUT US</p>
-      <p class="contact">{{#link-to 'about'}}About{{/link-to}}</p>
+      <i class="medium material-icons">thumb_up</i>
+      <p>promote jobbers on a job well done</p>
+    </div>
+    <div class="col s4">
+      <i class="medium material-icons">vpn_key</i>
+      <p>make pancakes</p>
     </div>
   </div>
-
-{{else}}
-  <!-- if session is not authenticated -->
-  <div class="hero">
-    <section class="module parallax parallax-1">
-      <div class="container hero-text center">
-        <h2>Welcome to Bidder</h2>
-      </div>
-    </section>
+</div>
+{{md-parallax image="/img/cleaning-bg.png" class="parallax-img1"}}
+<div class="row footer-upper">
+  <div class="col s4">
+    <p>CONTACT US</p>
+    <p class="contact">info@bidder.com</p>
   </div>
-  <div class="section grey lighten-2">
-    <div class="row container">
-      <div class="col s12">
-        <h3>How it Works</h3>
-      </div>
-      <div class="col s4">
-        <i class="medium material-icons">mode_edit</i>
-        <p>Bidders post odd jobs and what they are willing to pay.</p>
-      </div>
-      <div class="col s4">
-        <i class="medium material-icons">thumb_up</i>
-        <p>Jobbers let Bidders know they are interested in offering their services.</p>
-      </div>
-      <div class="col s4">
-        <i class="medium material-icons">vpn_key</i>
-        <p>Bidders contact interested jobbers to get the job done!</p>
-      </div>
-    </div>
+  <div class="col s4">
+    <p>SOCIAL MEDIA</p>
+    <p class="social-media"><i class="fa fa-facebook-official" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-github-alt" aria-hidden="true"></i> <i class="fa fa-instagram" aria-hidden="true"></i></p>
   </div>
-  {{md-parallax image="/img/techhelp-bg.png" class="parallax-img2"}}
-  <div class="section grey lighten-2">
-    <div class="row container">
-      <div class="col s12">
-        <h3>Other Content</h3>
-      </div>
-      <div class="col s4">
-        <i class="medium material-icons">mode_edit</i>
-        <p>this would be a good place for more content</p>
-      </div>
-      <div class="col s4">
-        <i class="medium material-icons">thumb_up</i>
-        <p>promote jobbers on a job well done</p>
-      </div>
-      <div class="col s4">
-        <i class="medium material-icons">vpn_key</i>
-        <p>make pancakes</p>
-      </div>
-    </div>
+  <div class="col s4">
+    <p>ABOUT US</p>
+    {{#link-to 'about'}}Read{{/link-to}}
   </div>
-  {{md-parallax image="/img/cleaning-bg.png" class="parallax-img1"}}
-
-  <div class="row footer-upper">
-    <div class="col s4">
-      <p>CONTACT US</p>
-      <p class="contact">info@bidder.com</p>
-
-    </div>
-    <div class="col s4">
-      <p>SOCIAL MEDIA</p>
-      <p class="social-media"><i class="fa fa-facebook-official" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-github-alt" aria-hidden="true"></i> <i class="fa fa-instagram" aria-hidden="true"></i></p>
-    </div>
-    <div class="col s4">
-      <p>ABOUT US</p>
-      {{#link-to 'about'}}Read{{/link-to}}
-    </div>
-  </div>
+</div>
 {{/if}}
